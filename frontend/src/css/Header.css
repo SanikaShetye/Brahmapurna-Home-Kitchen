@@ -1,0 +1,200 @@
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    width: 100%;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #eee1d8;
+
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* =========================================
+   HEADER CONTAINER
+========================================= */
+
+.header-container {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 14px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    cursor: pointer;
+}
+
+.logo-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff1df;
+
+    font-size: 25px;
+}
+
+.logo-text h2 {
+    margin: 0;
+
+    color: #7b3f00;
+
+    font-size: 20px;
+
+    line-height: 1.1;
+}
+
+.logo-text span {
+    color: #8c7b70;
+
+    font-size: 12px;
+
+    letter-spacing: 0.5px;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navigation {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+.navigation a {
+    color: #3d2114;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: color 0.2s ease;
+}
+
+.navigation a:hover {
+    color: #7b3f00;
+}
+
+/* =========================================
+   CART
+========================================= */
+
+.cart-button {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 10px 16px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #7b3f00;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+.cart-button:hover {
+    background: #5c2f00;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+    .navigation {
+        gap: 15px;
+    }
+
+    .navigation a {
+        font-size: 14px;
+    }
+
+    .logo-text h2 {
+        font-size: 18px;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .header-container {
+        padding: 12px 15px;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .logo-text h2 {
+        font-size: 17px;
+    }
+
+    .logo-text span {
+        font-size: 10px;
+    }
+
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+
+        font-size: 22px;
+    }
+
+    .cart-button {
+        padding: 9px 12px;
+    }
+}

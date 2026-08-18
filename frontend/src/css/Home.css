@@ -1,0 +1,112 @@
+/* =========================================
+   HOME PAGE
+   Brahmapurna Home Kitchen
+========================================= */
+
+.home {
+    min-height: 100vh;
+
+    background: #fffaf5;
+
+    color: #2d1b14;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+}
+
+/* =========================================
+   MENU CONTAINER
+========================================= */
+
+.menu-container {
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 60px 20px;
+}
+
+/* =========================================
+   CATEGORIES SECTION
+========================================= */
+
+.categories-section {
+    width: 100%;
+
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.section-title {
+    margin: 0 0 30px;
+
+    text-align: center;
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+    color: #3d2114;
+}
+
+/* =========================================
+   LOADING
+========================================= */
+
+.loading {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #fffaf5;
+
+    color: #7b3f00;
+}
+
+/* =========================================
+   ERROR
+========================================= */
+
+.error {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    text-align: center;
+
+    background: #fffaf5;
+
+    color: #b3261e;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .menu-container {
+        padding: 40px 15px;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+}

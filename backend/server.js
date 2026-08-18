@@ -4,6 +4,9 @@ const dotenv = require("dotenv");
 
 const connectDB = require("./config/db");
 
+const foodRoutes = require("./routes/FoodRoutes");
+const categoryRoutes = require("./routes/CategoryRoutes");
+
 // Load environment variables
 dotenv.config();
 
@@ -22,6 +25,10 @@ app.get("/", (req, res) => {
         message: "Brahmapurna Home Kitchen API is running"
     });
 });
+
+// API Routes
+app.use("/api/foods", foodRoutes);
+app.use("/api/categories", categoryRoutes);
 
 // Server port
 const PORT = process.env.PORT || 5000;

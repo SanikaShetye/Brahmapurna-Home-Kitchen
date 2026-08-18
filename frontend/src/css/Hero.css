@@ -1,0 +1,248 @@
+/* =========================================
+   HERO SECTION
+   Brahmapurna Home Kitchen
+========================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 70px 20px;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff5e8,
+            #ffe1bd
+        );
+}
+
+/* Decorative circles */
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    top: -120px;
+    left: -100px;
+
+    border-radius: 50%;
+
+    background: rgba(123, 63, 0, 0.08);
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    right: -140px;
+    bottom: -160px;
+
+    border-radius: 50%;
+
+    background: rgba(123, 63, 0, 0.08);
+}
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-content {
+    position: relative;
+
+    z-index: 1;
+
+    max-width: 750px;
+
+    margin: 0 auto;
+}
+
+/* =========================================
+   TAGLINE
+========================================= */
+
+.hero-tagline {
+    display: inline-block;
+
+    margin: 0 0 18px;
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    background: #fff;
+
+    color: #7b3f00;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.hero h1 {
+    margin: 0;
+
+    color: #3d2114;
+
+    font-size: 58px;
+    font-weight: 800;
+
+    line-height: 1.1;
+}
+
+.hero h1 span {
+    display: block;
+
+    margin-top: 8px;
+
+    color: #7b3f00;
+}
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.hero-description {
+    max-width: 600px;
+
+    margin: 25px auto 30px;
+
+    color: #6f625b;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.hero-buttons {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.hero-primary-button,
+.hero-secondary-button {
+    display: inline-block;
+
+    padding: 12px 25px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: all 0.25s ease;
+}
+
+.hero-primary-button {
+    background: #7b3f00;
+    color: #ffffff;
+}
+
+.hero-primary-button:hover {
+    background: #5c2f00;
+
+    transform: translateY(-2px);
+}
+
+.hero-secondary-button {
+    border: 2px solid #7b3f00;
+
+    background: #ffffff;
+
+    color: #7b3f00;
+}
+
+.hero-secondary-button:hover {
+    background: #7b3f00;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        min-height: 450px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero-description {
+        font-size: 17px;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: 420px;
+
+        padding: 55px 15px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+
+        margin-top: 20px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .hero-primary-button,
+    .hero-secondary-button {
+        width: 200px;
+
+        text-align: center;
+    }
+}

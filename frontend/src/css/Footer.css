@@ -1,0 +1,167 @@
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    margin-top: 70px;
+
+    background: #3d2114;
+    color: #ffffff;
+}
+
+/* =========================================
+   FOOTER CONTAINER
+========================================= */
+
+.footer-container {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 55px 20px;
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1.5fr 1fr;
+
+    gap: 40px;
+}
+
+/* =========================================
+   FOOTER SECTIONS
+========================================= */
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.footer-section h3 {
+    margin: 0 0 10px;
+
+    font-size: 18px;
+
+    color: #ffd9a8;
+}
+
+.footer-section p {
+    margin: 0;
+
+    color: #e5d8cf;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+/* =========================================
+   BRAND
+========================================= */
+
+.footer-brand h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 24px;
+}
+
+.footer-brand > p:first-of-type {
+    margin-top: -5px;
+
+    color: #ffd9a8;
+
+    font-weight: 600;
+}
+
+.footer-brand > p:last-child {
+    max-width: 300px;
+
+    margin-top: 5px;
+}
+
+/* =========================================
+   LINKS
+========================================= */
+
+.footer-section a {
+    width: fit-content;
+
+    color: #e5d8cf;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: color 0.2s ease;
+}
+
+.footer-section a:hover {
+    color: #ffd9a8;
+}
+
+/* =========================================
+   SOCIAL LINKS
+========================================= */
+
+.social-links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.footer-bottom {
+    padding: 18px 20px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    color: #cdbeb4;
+
+    font-size: 13px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 35px;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        padding: 40px 20px;
+
+        gap: 30px;
+    }
+
+    .footer-brand > p:last-child {
+        max-width: 100%;
+    }
+}

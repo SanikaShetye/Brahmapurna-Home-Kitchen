@@ -1,0 +1,79 @@
+/* =========================================
+   FOOD SECTION
+========================================= */
+
+.food-section {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Section title */
+
+.food-section .section-title {
+    margin-bottom: 30px;
+
+    text-align: center;
+
+    font-size: 32px;
+    font-weight: 700;
+
+    color: #3d2114;
+}
+
+/* Food grid */
+
+.food-section .food-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 28px;
+
+    width: 100%;
+}
+
+/* No food message */
+
+.no-food {
+    padding: 40px 20px;
+
+    text-align: center;
+
+    color: #766960;
+
+    font-size: 16px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .food-section .food-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 22px;
+    }
+
+    .food-section .section-title {
+        font-size: 28px;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .food-section .food-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .food-section .section-title {
+        font-size: 25px;
+    }
+}
