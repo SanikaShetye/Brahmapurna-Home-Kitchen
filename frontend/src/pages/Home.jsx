@@ -32,7 +32,6 @@ function Home() {
                 setFoods(foodResponse.data);
             } catch (error) {
                 console.error(error);
-
                 setError("Unable to load menu data.");
             } finally {
                 setLoading(false);
@@ -42,10 +41,6 @@ function Home() {
         fetchData();
     }, []);
 
-    /* =========================================
-       FILTER FOODS BY CATEGORY
-    ========================================= */
-
     const filteredFoods =
         selectedCategory === "all"
             ? foods
@@ -53,10 +48,6 @@ function Home() {
                 (food) =>
                     food.category?._id === selectedCategory
             );
-
-    /* =========================================
-       LOADING
-    ========================================= */
 
     if (loading) {
         return (
@@ -66,10 +57,6 @@ function Home() {
         );
     }
 
-    /* =========================================
-       ERROR
-    ========================================= */
-
     if (error) {
         return (
             <div className="error">
@@ -78,38 +65,50 @@ function Home() {
         );
     }
 
-    /* =========================================
-       PAGE
-    ========================================= */
-
     return (
         <div className="home">
 
-            {/* Header */}
             <Header />
 
-            {/* Hero */}
             <Hero />
 
-            {/* Menu */}
+            {/* =========================================
+                EXPLORE OUR MENU
+            ========================================= */}
+
             <main className="menu-container">
 
-                {/* Categories */}
-                <section className="categories-section">
+                <section
+                    className="categories-section"
+                    id="menu"
+                >
+                    <div className="menu-heading">
+                        <span className="menu-label">
+                            🍲 Fresh & Homemade
+                        </span>
 
-                    <h2 className="section-title">
-                        Explore Our Menu
-                    </h2>
+                        <h2 className="section-title">
+                            Explore Our Menu
+                        </h2>
+
+                        <p className="section-description">
+                            Discover delicious homemade dishes
+                            prepared with traditional recipes,
+                            fresh ingredients, and lots of love.
+                        </p>
+                    </div>
 
                     <CategoryMenu
                         categories={categories}
                         selectedCategory={selectedCategory}
                         setSelectedCategory={setSelectedCategory}
                     />
-
                 </section>
 
-                {/* Food */}
+                {/* =========================================
+                    FOOD SECTION
+                ========================================= */}
+
                 <FoodSection
                     foods={filteredFoods}
                     title="Our Menu"
@@ -117,7 +116,6 @@ function Home() {
 
             </main>
 
-            {/* Footer */}
             <Footer />
 
         </div>
@@ -125,3 +123,4 @@ function Home() {
 }
 
 export default Home;
+

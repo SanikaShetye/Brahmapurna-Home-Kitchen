@@ -1,200 +1,292 @@
 /* =========================================
    HEADER
+   Brahmapurna Home Kitchen
 ========================================= */
 
 .header {
     width: 100%;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 30px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #eadfd5;
 
     position: sticky;
     top: 0;
     z-index: 1000;
 
-    background: #ffffff;
-
-    border-bottom: 1px solid #eee1d8;
-
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 15px rgba(80, 45, 20, 0.06);
 }
+
 
 /* =========================================
-   HEADER CONTAINER
+   BRAND
 ========================================= */
 
-.header-container {
-    max-width: 1200px;
-
-    margin: 0 auto;
-
-    padding: 14px 20px;
-
+.brand {
     display: flex;
-
     align-items: center;
 
-    justify-content: space-between;
+    gap: 11px;
 
-    gap: 25px;
+    min-width: 230px;
 }
+
 
 /* =========================================
    LOGO
 ========================================= */
 
-.logo {
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    cursor: pointer;
-}
-
-.logo-icon {
-    width: 45px;
-    height: 45px;
+.brand-logo {
+    width: 46px;
+    height: 46px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
+    flex-shrink: 0;
+
     border-radius: 50%;
 
-    background: #fff1df;
-
-    font-size: 25px;
+    background: #fff0dc;
 }
 
-.logo-text h2 {
+.brand-logo-icon {
+    width: 46px;
+    height: 46px;
+
+    display: block;
+}
+
+
+/* =========================================
+   BRAND TEXT
+========================================= */
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.brand-text h2 {
     margin: 0;
 
-    color: #7b3f00;
-
-    font-size: 20px;
-
+    font-size: 21px;
     line-height: 1.1;
+
+    font-weight: 700;
+
+    color: #7b3f00;
 }
 
-.logo-text span {
-    color: #8c7b70;
+.brand-text span {
+    font-size: 13px;
+    line-height: 1.2;
 
-    font-size: 12px;
-
-    letter-spacing: 0.5px;
+    color: #8c7a6d;
 }
+
 
 /* =========================================
    NAVIGATION
 ========================================= */
 
-.navigation {
+.navbar {
     display: flex;
-
     align-items: center;
 
-    gap: 30px;
+    gap: 36px;
 }
 
-.navigation a {
-    color: #3d2114;
-
+.navbar a {
     text-decoration: none;
 
-    font-size: 15px;
-
+    font-size: 16px;
     font-weight: 600;
 
-    transition: color 0.2s ease;
+    color: #3d2114;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
 }
 
-.navigation a:hover {
-    color: #7b3f00;
+.navbar a:hover {
+    color: #a05200;
+
+    transform: translateY(-1px);
 }
+
 
 /* =========================================
-   CART
+   CART BUTTON
 ========================================= */
 
 .cart-button {
+    min-width: 105px;
+    height: 42px;
+
     display: flex;
-
     align-items: center;
+    justify-content: center;
 
-    gap: 7px;
-
-    padding: 10px 16px;
+    gap: 8px;
 
     border: none;
+    border-radius: 11px;
 
-    border-radius: 9px;
-
-    background: #7b3f00;
+    background: #8b4a00;
 
     color: #ffffff;
 
-    font-size: 14px;
-
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 700;
 
     cursor: pointer;
 
-    transition: background 0.2s ease;
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .cart-button:hover {
-    background: #5c2f00;
+    background: #6f3900;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 12px rgba(111, 57, 0, 0.2);
 }
+
+.cart-button:active {
+    transform: scale(0.97);
+}
+
+.cart-icon {
+    font-size: 17px;
+}
+
 
 /* =========================================
    TABLET
 ========================================= */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 
-    .navigation {
-        gap: 15px;
+    .header {
+        padding: 0 20px;
     }
 
-    .navigation a {
-        font-size: 14px;
+    .brand {
+        min-width: auto;
     }
 
-    .logo-text h2 {
-        font-size: 18px;
+    .navbar {
+        gap: 22px;
+    }
+
+    .navbar a {
+        font-size: 15px;
+    }
+
+    .brand-text h2 {
+        font-size: 19px;
+    }
+
+    .brand-text span {
+        font-size: 12px;
+    }
+
+    .cart-button {
+        min-width: 90px;
     }
 }
+
 
 /* =========================================
    MOBILE
 ========================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
 
-    .header-container {
+    .header {
+        height: auto;
+
+        min-height: 72px;
+
         padding: 12px 15px;
+
+        flex-wrap: wrap;
+
+        gap: 12px;
     }
 
-    .navigation {
-        display: none;
+
+    /* Brand */
+
+    .brand {
+        flex: 1;
     }
 
-    .logo-text h2 {
-        font-size: 17px;
+    .brand-logo {
+        width: 42px;
+        height: 42px;
     }
 
-    .logo-text span {
-        font-size: 10px;
+    .brand-logo-icon {
+        width: 42px;
+        height: 42px;
     }
 
-    .logo-icon {
-        width: 40px;
-        height: 40px;
-
-        font-size: 22px;
+    .brand-text h2 {
+        font-size: 18px;
     }
+
+    .brand-text span {
+        font-size: 11px;
+    }
+
+
+    /* Cart */
 
     .cart-button {
-        padding: 9px 12px;
+        min-width: 78px;
+        height: 38px;
+
+        font-size: 13px;
+    }
+
+    .cart-icon {
+        font-size: 15px;
+    }
+
+
+    /* Navigation */
+
+    .navbar {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        gap: 20px;
+
+        padding-top: 5px;
+    }
+
+    .navbar a {
+        font-size: 14px;
     }
 }

@@ -1,100 +1,157 @@
-/* =========================================
-   HOME PAGE
-   Brahmapurna Home Kitchen
-========================================= */
-
 .home {
+    width: 100%;
     min-height: 100vh;
+    margin: 0;
+    padding: 0;
 
     background: #fffaf5;
-
     color: #2d1b14;
 
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
-
-/* =========================================
-   MENU CONTAINER
-========================================= */
-
 .menu-container {
     width: 100%;
-
     max-width: 1200px;
-
     margin: 0 auto;
-
     padding: 60px 20px;
 }
-
 /* =========================================
-   CATEGORIES SECTION
+   EXPLORE MENU SECTION
 ========================================= */
 
 .categories-section {
     width: 100%;
-
-    margin-bottom: 20px;
+    padding: 70px 20px 45px;
+    box-sizing: border-box;
+    text-align: center;
 }
 
+
 /* =========================================
-   SECTION TITLE
+   MENU HEADING
 ========================================= */
 
-.section-title {
-    margin: 0 0 30px;
+.menu-heading {
+    max-width: 750px;
+    margin: 0 auto 35px;
+}
 
-    text-align: center;
 
-    font-size: 32px;
+/* Small label */
 
+.menu-label {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 8px 18px;
+
+    margin-bottom: 16px;
+
+    border-radius: 30px;
+
+    background: #fff1df;
+
+    color: #8b4a00;
+
+    font-size: 14px;
     font-weight: 700;
+}
+
+
+/* Main heading */
+
+.section-title {
+    margin: 0;
+
+    font-size: 42px;
+    line-height: 1.15;
+
+    font-weight: 800;
 
     color: #3d2114;
 }
 
+
+/* Description */
+
+.section-description {
+    max-width: 650px;
+
+    margin: 15px auto 0;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    color: #74665d;
+}
+
+
 /* =========================================
-   LOADING
+   CATEGORY AREA
 ========================================= */
 
-.loading {
-    min-height: 100vh;
-
+.category-list {
     display: flex;
 
+    justify-content: center;
     align-items: center;
 
-    justify-content: center;
+    flex-wrap: wrap;
 
-    background: #fffaf5;
+    gap: 12px;
+
+    width: 100%;
+
+    margin: 0 auto;
+}
+
+
+/* Category buttons */
+
+.category-button {
+    padding: 12px 22px;
+
+    border: 1.5px solid #d9b58b;
+
+    border-radius: 30px;
+
+    background: #ffffff;
 
     color: #7b3f00;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
 }
 
-/* =========================================
-   ERROR
-========================================= */
 
-.error {
-    min-height: 100vh;
+.category-button:hover {
+    background: #8b4a00;
 
-    display: flex;
+    border-color: #8b4a00;
 
-    align-items: center;
+    color: #ffffff;
 
-    justify-content: center;
-
-    padding: 20px;
-
-    text-align: center;
-
-    background: #fffaf5;
-
-    color: #b3261e;
+    transform: translateY(-2px);
 }
+
+
+/* Selected category */
+
+.category-button.active {
+    background: #8b4a00;
+
+    border-color: #8b4a00;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 6px 15px rgba(139, 74, 0, 0.2);
+}
+
 
 /* =========================================
    MOBILE
@@ -102,11 +159,25 @@
 
 @media (max-width: 600px) {
 
-    .menu-container {
-        padding: 40px 15px;
+    .categories-section {
+        padding: 50px 15px 35px;
     }
 
     .section-title {
-        font-size: 26px;
+        font-size: 32px;
+    }
+
+    .section-description {
+        font-size: 15px;
+    }
+
+    .category-list {
+        gap: 8px;
+    }
+
+    .category-button {
+        padding: 9px 16px;
+        font-size: 14px;
     }
 }
+
