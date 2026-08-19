@@ -12,8 +12,12 @@
 .menu-container {
     width: 100%;
     max-width: 1200px;
+
     margin: 0 auto;
-    padding: 60px 20px;
+
+    padding: 0 20px 50px;
+
+    box-sizing: border-box;
 }
 /* =========================================
    EXPLORE MENU SECTION
@@ -21,9 +25,9 @@
 
 .categories-section {
     width: 100%;
-    padding: 70px 20px 45px;
-    box-sizing: border-box;
-    text-align: center;
+    margin: -35px 0 45px;
+    position: relative;
+    z-index: 10;
 }
 
 
@@ -59,15 +63,11 @@
 
 
 /* Main heading */
-
 .section-title {
-    margin: 0;
-
-    font-size: 42px;
-    line-height: 1.15;
-
-    font-weight: 800;
-
+    margin: 0 0 30px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
     color: #3d2114;
 }
 

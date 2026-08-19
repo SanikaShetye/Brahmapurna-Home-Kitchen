@@ -1,0 +1,262 @@
+/* =========================================
+Features Section
+========================================= */
+.why-choose-us {
+    width: 100%;
+    background: #fff8ef;
+
+    border-top: 1px solid #f1dfca;
+    border-bottom: 1px solid #f1dfca;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.why-choose-container {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    padding: 24px 30px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   FEATURE ITEM
+========================================= */
+
+.feature-item {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 4px 25px;
+
+    border-right: 1px solid #ead8c5;
+
+    min-height: 58px;
+
+    box-sizing: border-box;
+}
+
+.feature-item:last-child {
+    border-right: none;
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.feature-icon {
+    min-width: 46px;
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #fff0d8;
+
+    color: #c46a0a;
+
+    font-size: 22px;
+
+    transition: all 0.3s ease;
+}
+
+
+/* =========================================
+   ICON HOVER
+========================================= */
+
+.feature-item:hover .feature-icon {
+    background: #c46a0a;
+    color: #ffffff;
+
+    transform: scale(1.05);
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.feature-content {
+    min-width: 0;
+}
+
+.feature-content h3 {
+    margin: 0 0 5px;
+
+    color: #3b2015;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    line-height: 1.2;
+}
+
+.feature-content p {
+    margin: 0;
+
+    color: #705f54;
+
+    font-size: 13px;
+    font-weight: 400;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .why-choose-container {
+        grid-template-columns: repeat(2, 1fr);
+
+        row-gap: 20px;
+
+        padding: 24px 25px;
+    }
+
+
+    /* Remove divider from second item */
+
+    .feature-item:nth-child(2) {
+        border-right: none;
+    }
+
+
+    /* Top divider for second row */
+
+    .feature-item:nth-child(3),
+    .feature-item:nth-child(4) {
+        border-top: 1px solid #ead8c5;
+
+        padding-top: 20px;
+    }
+
+
+    .feature-item {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+
+    .feature-content h3 {
+        font-size: 14px;
+    }
+
+    .feature-content p {
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .why-choose-container {
+        grid-template-columns: 1fr;
+
+        padding: 18px 20px;
+    }
+
+
+    /* Remove all dividers */
+
+    .feature-item,
+    .feature-item:nth-child(3),
+    .feature-item:nth-child(4) {
+        border-right: none;
+        border-top: none;
+
+        padding: 10px 5px;
+
+        min-height: auto;
+    }
+
+
+    /* Icon */
+
+    .feature-icon {
+        min-width: 42px;
+        width: 42px;
+        height: 42px;
+
+        font-size: 20px;
+    }
+
+
+    /* Title */
+
+    .feature-content h3 {
+        font-size: 14px;
+
+        margin-bottom: 4px;
+    }
+
+
+    /* Description */
+
+    .feature-content p {
+        font-size: 12px;
+
+        line-height: 1.45;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .why-choose-container {
+        padding: 15px;
+    }
+
+    .feature-item {
+        gap: 12px;
+    }
+
+    .feature-icon {
+        min-width: 40px;
+        width: 40px;
+        height: 40px;
+
+        font-size: 18px;
+    }
+
+    .feature-content h3 {
+        font-size: 13px;
+    }
+
+    .feature-content p {
+        font-size: 11px;
+    }
+}

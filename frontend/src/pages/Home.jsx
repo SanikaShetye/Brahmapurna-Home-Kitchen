@@ -7,6 +7,7 @@ import Hero from "../components/Hero";
 import CategoryMenu from "../components/CategoryMenu";
 import FoodSection from "../components/FoodSection";
 import Footer from "../components/Footer";
+import Features from "../components/Features";
 
 import "../css/Home.css";
 
@@ -78,31 +79,14 @@ function Home() {
 
             <main className="menu-container">
 
-                <section
-                    className="categories-section"
-                    id="menu"
-                >
-                    <div className="menu-heading">
-                        <span className="menu-label">
-                            🍲 Fresh & Homemade
-                        </span>
-
-                        <h2 className="section-title">
-                            Explore Our Menu
-                        </h2>
-
-                        <p className="section-description">
-                            Discover delicious homemade dishes
-                            prepared with traditional recipes,
-                            fresh ingredients, and lots of love.
-                        </p>
-                    </div>
+                <section className="categories-section">
 
                     <CategoryMenu
                         categories={categories}
                         selectedCategory={selectedCategory}
                         setSelectedCategory={setSelectedCategory}
                     />
+
                 </section>
 
                 {/* =========================================
@@ -116,6 +100,16 @@ function Home() {
 
             </main>
 
+            {/* =========================================
+                FEATURES
+            ========================================= */}
+
+            <Features />
+
+            {/* =========================================
+                FOOTER
+            ========================================= */}
+
             <Footer />
 
         </div>
@@ -123,4 +117,3 @@ function Home() {
 }
 
 export default Home;
-

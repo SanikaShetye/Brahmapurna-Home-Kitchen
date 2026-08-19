@@ -1,167 +1,518 @@
 /* =========================================
    FOOTER
+   Brahmapurna Home Kitchen
 ========================================= */
 
 .footer {
-    margin-top: 70px;
-
-    background: #3d2114;
-    color: #ffffff;
+    width: 100%;
+    background: #3b2015;
+    color: #fff8f0;
+    margin-top: 0;
 }
 
+
 /* =========================================
-   FOOTER CONTAINER
+   MAIN FOOTER
 ========================================= */
 
-.footer-container {
-    max-width: 1200px;
-
+.footer-main {
+    width: 100%;
+    max-width: 1400px;
     margin: 0 auto;
 
-    padding: 55px 20px;
+    padding: 65px 7% 55px;
+
+    box-sizing: border-box;
 
     display: grid;
+    grid-template-columns:
+        1.35fr
+        0.8fr
+        1.15fr
+        1.2fr;
 
-    grid-template-columns: 2fr 1fr 1.5fr 1fr;
-
-    gap: 40px;
+    gap: 55px;
 }
 
-/* =========================================
-   FOOTER SECTIONS
-========================================= */
-
-.footer-section {
-    display: flex;
-    flex-direction: column;
-
-    gap: 10px;
-}
-
-.footer-section h3 {
-    margin: 0 0 10px;
-
-    font-size: 18px;
-
-    color: #ffd9a8;
-}
-
-.footer-section p {
-    margin: 0;
-
-    color: #e5d8cf;
-
-    font-size: 14px;
-
-    line-height: 1.7;
-}
 
 /* =========================================
    BRAND
 ========================================= */
 
-.footer-brand h2 {
-    margin: 0;
+.footer-brand {
+    padding-right: 25px;
+}
 
-    color: #ffffff;
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.footer-logo-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff0dc;
 
     font-size: 24px;
 }
 
-.footer-brand > p:first-of-type {
-    margin-top: -5px;
+.footer-logo h2 {
+    margin: 0;
 
-    color: #ffd9a8;
+    color: #fffaf5;
 
-    font-weight: 600;
+    font-size: 30px;
+    line-height: 1.1;
+
+    font-weight: 800;
 }
 
-.footer-brand > p:last-child {
-    max-width: 300px;
+.footer-logo span {
+    display: block;
 
     margin-top: 5px;
+
+    color: #f5b35f;
+
+    font-size: 16px;
+    font-weight: 700;
 }
 
+
 /* =========================================
-   LINKS
+   DESCRIPTION
 ========================================= */
 
-.footer-section a {
-    width: fit-content;
+.footer-description {
+    max-width: 390px;
 
-    color: #e5d8cf;
+    margin: 28px 0 0;
+
+    color: #eaded4;
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   SOCIAL
+========================================= */
+
+.footer-social {
+    display: flex;
+
+    gap: 14px;
+
+    margin-top: 28px;
+}
+
+.footer-social a {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(245, 179, 95, 0.55);
+
+    border-radius: 50%;
+
+    color: #fff8f0;
 
     text-decoration: none;
 
-    font-size: 14px;
+    font-size: 21px;
+    font-weight: 700;
 
-    transition: color 0.2s ease;
+    transition: all 0.25s ease;
 }
 
-.footer-section a:hover {
-    color: #ffd9a8;
+.footer-social a:hover {
+    background: #a65300;
+
+    border-color: #a65300;
+
+    transform: translateY(-3px);
 }
+
 
 /* =========================================
-   SOCIAL LINKS
+   FOOTER COLUMNS
 ========================================= */
 
-.social-links {
-    display: flex;
+.footer-column {
+    padding-left: 30px;
 
-    flex-direction: column;
-
-    gap: 10px;
+    border-left: 1px solid rgba(245, 179, 95, 0.25);
 }
 
+.footer-column h3 {
+    margin: 0;
+
+    color: #f7bd70;
+
+    font-size: 16px;
+
+    font-weight: 800;
+}
+
+
 /* =========================================
-   BOTTOM
+   HEADING LINE
+========================================= */
+
+.footer-heading-line {
+    width: 60px;
+    height: 3px;
+
+    margin: 12px 0 24px;
+
+    border-radius: 10px;
+
+    background: #d87518;
+}
+
+.footer-heading-line::after {
+    content: "";
+
+    display: block;
+
+    width: 7px;
+    height: 7px;
+
+    margin-left: 57px;
+    margin-top: -2px;
+
+    border-radius: 50%;
+
+    background: #d87518;
+}
+
+
+/* =========================================
+   QUICK LINKS
+========================================= */
+
+.footer-column ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.footer-column li {
+    margin-bottom: 17px;
+}
+
+.footer-column li a {
+    color: #f1e5dc;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    transition: all 0.25s ease;
+}
+
+.footer-column li a::before {
+    content: "›";
+
+    margin-right: 10px;
+
+    color: #e58a2b;
+
+    font-size: 16px;
+
+    font-weight: 700;
+}
+
+.footer-column li a:hover {
+    color: #f5b35f;
+
+    padding-left: 5px;
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact-item {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    margin-bottom: 20px;
+
+    color: #f1e5dc;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+.contact-icon {
+    min-width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(216, 117, 24, 0.6);
+
+    border-radius: 50%;
+
+    font-size: 16px;
+}
+
+
+/* =========================================
+   GOOGLE MAP
+========================================= */
+
+.footer-location {
+    min-width: 0;
+}
+
+.map-container {
+    width: 100%;
+
+    height: 190px;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    border: 2px solid rgba(245, 179, 95, 0.35);
+
+    background: #eaded4;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+
+    display: block;
+}
+
+
+/* =========================================
+   MAP BUTTON
+========================================= */
+
+.map-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 14px;
+
+    padding: 11px 18px;
+
+    border-radius: 8px;
+
+    background: #a65300;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition: all 0.25s ease;
+}
+
+.map-button:hover {
+    background: #c46a0a;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   BOTTOM FOOTER
 ========================================= */
 
 .footer-bottom {
-    padding: 18px 20px;
+    min-height: 90px;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0 7%;
 
-    text-align: center;
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    border-top: 1px solid rgba(245, 179, 95, 0.25);
+
+    background: #321b12;
 }
 
-.footer-bottom p {
-    margin: 0;
 
-    color: #cdbeb4;
+/* =========================================
+   COPYRIGHT
+========================================= */
 
-    font-size: 13px;
+.copyright {
+    color: #e6d8cd;
+
+    font-size: 14px;
 }
+
+
+/* =========================================
+   CENTER HEART
+========================================= */
+
+.footer-heart {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #d87518;
+}
+
+.footer-heart span {
+    letter-spacing: 3px;
+}
+
+.footer-heart strong {
+    color: #e58a2b;
+
+    font-size: 25px;
+}
+
+
+/* =========================================
+   MADE WITH
+========================================= */
+
+.made-with {
+    color: #e6d8cd;
+
+    font-size: 14px;
+}
+
+.made-with span {
+    color: #e58a2b;
+
+    font-size: 18px;
+}
+
 
 /* =========================================
    TABLET
 ========================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
 
-    .footer-container {
-        grid-template-columns: repeat(2, 1fr);
+    .footer-main {
+        grid-template-columns:
+            1.2fr
+            0.8fr
+            1fr;
 
-        gap: 35px;
+        gap: 40px;
+    }
+
+    .footer-location {
+        grid-column: span 3;
+
+        border-left: none;
+
+        border-top: 1px solid rgba(245, 179, 95, 0.25);
+
+        padding-left: 0;
+
+        padding-top: 35px;
+    }
+
+    .map-container {
+        max-width: 500px;
     }
 }
+
 
 /* =========================================
    MOBILE
 ========================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
-    .footer-container {
+    .footer-main {
         grid-template-columns: 1fr;
 
-        padding: 40px 20px;
+        padding: 45px 25px;
 
-        gap: 30px;
+        gap: 35px;
     }
 
-    .footer-brand > p:last-child {
-        max-width: 100%;
+    .footer-brand {
+        padding-right: 0;
+    }
+
+    .footer-column {
+        padding-left: 0;
+
+        border-left: none;
+
+        border-top: 1px solid rgba(245, 179, 95, 0.25);
+
+        padding-top: 30px;
+    }
+
+    .footer-location {
+        grid-column: auto;
+
+        padding-top: 30px;
+    }
+
+    .footer-logo h2 {
+        font-size: 26px;
+    }
+
+    .footer-description {
+        font-size: 15px;
+    }
+
+    .map-container {
+        max-width: none;
+
+        height: 220px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        justify-content: center;
+
+        text-align: center;
+
+        padding: 25px 20px;
+
+        gap: 14px;
     }
 }

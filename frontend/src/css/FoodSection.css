@@ -4,76 +4,87 @@
 
 .food-section {
     width: 100%;
-    margin-top: 20px;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Section title */
+/* Heading */
 
-.food-section .section-title {
-    margin-bottom: 30px;
+.food-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 
-    text-align: center;
+    margin: 0 0 20px;
+}
 
-    font-size: 32px;
+.food-section-heading h2 {
+    margin: 0;
+    color: #5c2f00;
+    font-size: 26px;
     font-weight: 700;
+}
 
-    color: #3d2114;
+.food-section-heading span {
+    color: #b56a20;
+    font-size: 20px;
 }
 
 /* Food grid */
 
 .food-section .food-grid {
     display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 28px;
-
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 14px;
     width: 100%;
 }
 
-/* No food message */
+/* View all */
 
-.no-food {
-    padding: 40px 20px;
-
-    text-align: center;
-
-    color: #766960;
-
-    font-size: 16px;
+.view-all-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 18px;
 }
 
-/* =========================================
-   TABLET
-========================================= */
+.view-all-button {
+    border: none;
+    border-radius: 6px;
 
-@media (max-width: 900px) {
+    padding: 9px 20px;
 
+    background: #8b4a00;
+    color: white;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.view-all-button:hover {
+    background: #6f3900;
+}
+
+/* Tablet */
+
+@media (max-width: 1100px) {
+    .food-section .food-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
     .food-section .food-grid {
         grid-template-columns: repeat(2, 1fr);
-
-        gap: 22px;
-    }
-
-    .food-section .section-title {
-        font-size: 28px;
     }
 }
 
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 600px) {
-
+@media (max-width: 450px) {
     .food-section .food-grid {
         grid-template-columns: 1fr;
-
-        gap: 20px;
-    }
-
-    .food-section .section-title {
-        font-size: 25px;
     }
 }
