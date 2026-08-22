@@ -88,3 +88,108 @@
         grid-template-columns: 1fr;
     }
 }
+/* =========================================
+   VIEW MORE BUTTON
+========================================= */
+
+.view-more-container {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 22px;
+}
+
+
+.view-more-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 10px 25px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #7b3f00;
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: 0 3px 8px rgba(123, 63, 0, 0.15);
+
+    transition:
+        background 0.25s ease,
+        transform 0.2s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.view-more-btn:hover {
+    background: #5c2f00;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 14px rgba(123, 63, 0, 0.22);
+}
+
+
+/* =========================================
+   ACTIVE / CLICK
+========================================= */
+
+.view-more-btn:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================
+   ARROW
+========================================= */
+
+.view-more-arrow {
+    font-size: 18px;
+
+    line-height: 1;
+
+    transition: transform 0.25s ease;
+}
+
+.view-more-btn:hover .view-more-arrow {
+    transform: translateX(3px);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .view-more-container {
+        margin-top: 20px;
+    }
+
+    .view-more-btn {
+        padding: 9px 21px;
+
+        font-size: 13px;
+    }
+
+    .view-more-arrow {
+        font-size: 17px;
+    }
+}

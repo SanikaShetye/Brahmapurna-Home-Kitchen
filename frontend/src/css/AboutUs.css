@@ -1,0 +1,700 @@
+/* =========================================
+   ABOUT PAGE
+   Brahmapurna Home Kitchen
+========================================= */
+
+.about-page {
+    width: 100%;
+
+    background: #fffaf5;
+
+    color: #3d2114;
+}
+
+
+/* =========================================
+   ABOUT HERO
+========================================= */
+
+.about-hero {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 440px;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    padding: 45px 8%;
+
+    box-sizing: border-box;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff5e8 0%,
+            #ffe6c4 100%
+        );
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.about-hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 52%;
+
+    max-width: 620px;
+
+    text-align: left;
+}
+
+
+/* =========================================
+   BADGE
+========================================= */
+
+.about-badge,
+.section-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 8px 17px;
+
+    border-radius: 30px;
+
+    background: #ffffff;
+
+    color: #8b4a00;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 5px 18px rgba(90, 50, 20, 0.08);
+}
+
+.about-badge {
+    margin-bottom: 18px;
+}
+
+
+/* =========================================
+   HERO TITLE
+========================================= */
+
+.about-hero h1 {
+    margin: 0;
+
+    font-size: 56px;
+
+    line-height: 1.06;
+
+    letter-spacing: -1.5px;
+
+    font-weight: 800;
+
+    color: #3d2114;
+}
+
+.about-hero h1 span {
+    color: #8b4a00;
+}
+
+
+/* =========================================
+   HERO DESCRIPTION
+========================================= */
+
+.about-hero-content > p {
+    max-width: 570px;
+
+    margin: 22px 0 0;
+
+    font-size: 18px;
+
+    line-height: 1.65;
+
+    color: #6f625b;
+}
+
+
+/* =========================================
+   HERO IMAGE
+========================================= */
+
+.about-hero-image {
+    position: relative;
+
+    width: 48%;
+
+    min-height: 380px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* =========================================
+   HERO CIRCLE
+========================================= */
+
+.about-circle {
+    position: absolute;
+
+    width: 350px;
+
+    height: 350px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.68);
+}
+
+
+/* =========================================
+   HERO IMAGE
+========================================= */
+
+.about-hero-image img {
+    position: relative;
+
+    z-index: 2;
+
+    width: 500px;
+
+    max-width: none;
+
+    height: auto;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 20px 25px rgba(70, 35, 10, 0.18)
+        );
+
+    transition: transform 0.3s ease;
+}
+
+.about-hero-image img:hover {
+    transform: scale(1.03);
+}
+
+
+/* =========================================
+   DECORATION
+========================================= */
+
+.about-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+
+    height: 280px;
+
+    border-radius: 50%;
+
+    left: -140px;
+
+    top: -130px;
+
+    background:
+        rgba(224, 179, 124, 0.15);
+}
+
+.about-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+
+    height: 220px;
+
+    border-radius: 50%;
+
+    right: -100px;
+
+    bottom: -120px;
+
+    background:
+        rgba(224, 179, 124, 0.18);
+}
+
+
+/* =========================================
+   OUR STORY
+========================================= */
+
+.story-section {
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 80px 40px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 75px;
+}
+
+
+/* =========================================
+   STORY IMAGE
+========================================= */
+
+.story-image {
+    width: 48%;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+.story-image img {
+    width: 100%;
+
+    max-width: 500px;
+
+    height: 390px;
+
+    object-fit: cover;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 35px rgba(80, 40, 15, 0.12);
+}
+
+
+/* =========================================
+   STORY CONTENT
+========================================= */
+
+.story-content {
+    width: 52%;
+
+    text-align: left;
+}
+
+.story-content .section-badge {
+    margin-bottom: 18px;
+}
+
+.story-content h2 {
+    margin: 0 0 22px;
+
+    font-size: 40px;
+
+    line-height: 1.15;
+
+    color: #3d2114;
+}
+
+.story-content h2 span {
+    color: #8b4a00;
+}
+
+.story-content p {
+    margin: 0 0 15px;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: #6f625b;
+}
+
+
+/* =========================================
+   WHY CHOOSE US
+========================================= */
+
+.about-features {
+    padding: 75px 40px;
+
+    background: #fff5e9;
+
+    border-top: 1px solid #f1dfca;
+
+    border-bottom: 1px solid #f1dfca;
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.about-section-heading {
+    max-width: 700px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+.about-section-heading .section-badge {
+    margin-bottom: 15px;
+}
+
+.about-section-heading h2 {
+    margin: 0;
+
+    font-size: 38px;
+
+    line-height: 1.2;
+
+    color: #3d2114;
+}
+
+.about-section-heading h2 span {
+    color: #8b4a00;
+}
+
+.about-section-heading p {
+    margin: 15px auto 0;
+
+    max-width: 600px;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    color: #6f625b;
+}
+
+
+/* =========================================
+   FEATURE GRID
+========================================= */
+
+.about-feature-grid {
+    width: 100%;
+
+    max-width: 1150px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================================
+   FEATURE CARD
+========================================= */
+
+.about-feature-card {
+    padding: 28px 22px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border: 1px solid #f0dfcd;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 25px rgba(90, 50, 20, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.about-feature-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 14px 30px rgba(90, 50, 20, 0.11);
+}
+
+
+/* =========================================
+   FEATURE ICON
+========================================= */
+
+.feature-icon {
+    width: 58px;
+
+    height: 58px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff0d8;
+
+    font-size: 27px;
+}
+
+
+/* =========================================
+   FEATURE TEXT
+========================================= */
+
+.about-feature-card h3 {
+    margin: 0 0 10px;
+
+    font-size: 18px;
+
+    color: #3d2114;
+}
+
+.about-feature-card p {
+    margin: 0;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: #6f625b;
+}
+
+
+/* =========================================
+   OUR PROMISE
+========================================= */
+
+.promise-section {
+    padding: 80px 30px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fffaf5,
+            #ffe8ca
+        );
+}
+
+
+/* =========================================
+   PROMISE CONTENT
+========================================= */
+
+.promise-content {
+    max-width: 750px;
+
+    margin: 0 auto;
+}
+
+.promise-content .section-badge {
+    margin-bottom: 18px;
+}
+
+.promise-content h2 {
+    margin: 0;
+
+    font-size: 40px;
+
+    line-height: 1.2;
+
+    color: #3d2114;
+}
+
+.promise-content h2 span {
+    color: #8b4a00;
+}
+
+.promise-content p {
+    max-width: 680px;
+
+    margin: 20px auto;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: #6f625b;
+}
+
+.promise-content strong {
+    display: block;
+
+    margin-top: 22px;
+
+    font-size: 17px;
+
+    font-style: italic;
+
+    color: #8b4a00;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .about-hero {
+        padding: 40px 5%;
+    }
+
+    .about-hero h1 {
+        font-size: 45px;
+    }
+
+    .about-circle {
+        width: 300px;
+        height: 300px;
+    }
+
+    .about-hero-image img {
+        width: 430px;
+    }
+
+    .story-section {
+        gap: 40px;
+    }
+
+    .story-content h2 {
+        font-size: 34px;
+    }
+
+    .about-feature-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .about-hero {
+        flex-direction: column;
+
+        min-height: auto;
+
+        padding: 45px 20px 35px;
+
+        text-align: center;
+    }
+
+    .about-hero-content {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .about-hero h1 {
+        font-size: 38px;
+    }
+
+    .about-hero-content > p {
+        margin: 18px auto 0;
+
+        font-size: 15px;
+    }
+
+    .about-hero-image {
+        width: 100%;
+
+        min-height: 300px;
+
+        margin-top: 15px;
+    }
+
+    .about-circle {
+        width: 270px;
+        height: 270px;
+    }
+
+    .about-hero-image img {
+        width: min(400px, 105%);
+    }
+
+
+    /* Story */
+
+    .story-section {
+        flex-direction: column;
+
+        padding: 55px 20px;
+
+        gap: 35px;
+    }
+
+    .story-image,
+    .story-content {
+        width: 100%;
+    }
+
+    .story-image img {
+        height: 300px;
+    }
+
+    .story-content {
+        text-align: center;
+    }
+
+    .story-content h2 {
+        font-size: 32px;
+    }
+
+
+    /* Features */
+
+    .about-features {
+        padding: 55px 20px;
+    }
+
+    .about-section-heading h2 {
+        font-size: 32px;
+    }
+
+    .about-feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Promise */
+
+    .promise-section {
+        padding: 60px 20px;
+    }
+
+    .promise-content h2 {
+        font-size: 32px;
+    }
+}
