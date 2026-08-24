@@ -1,0 +1,345 @@
+/* =========================================
+   MENU PAGE
+   Brahmapurna Home Kitchen
+========================================= */
+
+.menu-page {
+    width: 100%;
+    min-height: 100vh;
+
+    background: #fffaf5;
+
+    color: #3d2114;
+}
+
+
+/* =========================================
+   MENU HERO
+========================================= */
+
+.menu-hero {
+    position: relative;
+
+    width: 100%;
+    min-height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 50px 20px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        135deg,
+        #fff5e8 0%,
+        #ffe6c4 100%
+    );
+}
+
+
+/* Decorative circles */
+
+.menu-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    left: -140px;
+    top: -130px;
+
+    background: rgba(224, 179, 124, 0.15);
+}
+
+
+.menu-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    border-radius: 50%;
+
+    right: -100px;
+    bottom: -120px;
+
+    background: rgba(224, 179, 124, 0.18);
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.menu-hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 750px;
+}
+
+
+/* Badge */
+
+.menu-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 8px 18px;
+
+    margin-bottom: 18px;
+
+    border-radius: 30px;
+
+    background: #ffffff;
+
+    color: #8b4a00;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 5px 18px rgba(90, 50, 20, 0.08);
+}
+
+
+/* Heading */
+
+.menu-hero h1 {
+    margin: 0;
+
+    font-size: 50px;
+
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    color: #3d2114;
+}
+
+
+.menu-hero h1 span {
+    color: #8b4a00;
+}
+
+
+/* Description */
+
+.menu-hero p {
+    max-width: 650px;
+
+    margin: 18px auto 0;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: #6f625b;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.menu-main {
+    width: 100%;
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    padding: 50px 30px 70px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   MENU TITLE
+========================================= */
+
+.menu-heading {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+
+.menu-heading > span {
+    color: #9a4f00;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+.menu-heading h2 {
+    margin: 8px 0 10px;
+
+    font-size: 36px;
+
+    font-weight: 800;
+
+    color: #3d2114;
+}
+
+
+.menu-heading h2 span {
+    color: #8b4a00;
+}
+
+
+.menu-heading p {
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    color: #76675e;
+}
+
+
+/* =========================================
+   CATEGORY
+========================================= */
+
+.menu-categories {
+    width: 100%;
+
+    margin-bottom: 40px;
+}
+
+
+/* =========================================
+   FOOD
+========================================= */
+
+.menu-food-section {
+    width: 100%;
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.menu-loading {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #fffaf5;
+
+    color: #8b4a00;
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.menu-error {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #fffaf5;
+
+    color: #b3261e;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .menu-hero {
+        min-height: 280px;
+    }
+
+    .menu-hero h1 {
+        font-size: 42px;
+    }
+
+    .menu-main {
+        padding: 45px 25px 60px;
+    }
+
+    .menu-heading h2 {
+        font-size: 32px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .menu-hero {
+        min-height: 250px;
+
+        padding: 40px 20px;
+    }
+
+    .menu-badge {
+        font-size: 12px;
+    }
+
+    .menu-hero h1 {
+        font-size: 34px;
+    }
+
+    .menu-hero p {
+        font-size: 14px;
+    }
+
+    .menu-main {
+        padding: 40px 15px 50px;
+    }
+
+    .menu-heading h2 {
+        font-size: 28px;
+    }
+
+    .menu-heading p {
+        font-size: 14px;
+    }
+
+    .menu-categories {
+        margin-bottom: 30px;
+    }
+}

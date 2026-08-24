@@ -1,0 +1,681 @@
+/* =========================================
+   CONTACT PAGE
+   Brahmapurna Home Kitchen
+========================================= */
+
+.contact-page {
+    width: 100%;
+    background: #fffaf4;
+    color: #3d2114;
+}
+
+
+/* =========================================
+   CONTACT HERO
+========================================= */
+
+.contact-hero {
+    width: 100%;
+    min-height: 275px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff8ef 0%,
+            #fff1df 48%,
+            #f7dfc2 100%
+        );
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.contact-hero-content {
+    width: 50%;
+    max-width: 650px;
+
+    margin-left: 9%;
+
+    position: relative;
+    z-index: 2;
+
+    text-align: left;
+}
+
+.contact-label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 0.8px;
+
+    color: #9a4f00;
+}
+
+.contact-hero h1 {
+    margin: 0;
+
+    font-size: 40px;
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    color: #3d2114;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.contact-divider {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 14px 0;
+}
+
+.contact-divider span:first-child,
+.contact-divider span:last-child {
+    width: 35px;
+    height: 1px;
+
+    background: #c87520;
+}
+
+.contact-divider span:nth-child(2) {
+    color: #c87520;
+    font-size: 14px;
+}
+
+.contact-hero p {
+    max-width: 520px;
+
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.6;
+
+    color: #6f625b;
+}
+
+
+/* =========================================
+   HERO IMAGE
+========================================= */
+
+.contact-hero-image {
+    position: absolute;
+
+    right: 0;
+    top: 0;
+
+    width: 50%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+.contact-hero-image::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff1df 0%,
+            rgba(255, 241, 223, 0.35) 20%,
+            rgba(255, 241, 223, 0) 55%
+        );
+}
+
+.contact-hero-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.contact-main {
+    width: 100%;
+
+    padding: 35px 0 55px;
+
+    background: #fffdf9;
+}
+
+.contact-container {
+    width: 88%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 0.85fr 1.25fr;
+
+    gap: 35px;
+}
+
+
+/* =========================================
+   TITLES
+========================================= */
+
+.contact-info h2,
+.contact-form-card h2 {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 0 0 18px;
+
+    font-size: 20px;
+    font-weight: 800;
+
+    color: #4a2717;
+}
+
+.title-icon {
+    color: #b85c00;
+    font-size: 19px;
+}
+
+
+/* =========================================
+   INFORMATION CARD
+========================================= */
+
+.info-card {
+    background: #ffffff;
+
+    border: 1px solid #f0dfce;
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 25px rgba(80, 45, 15, 0.05);
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding: 15px 20px;
+
+    border-bottom: 1px solid #f0e5da;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #fff3e3;
+
+    font-size: 18px;
+}
+
+.info-item div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.info-item span {
+    font-size: 12px;
+    font-weight: 600;
+
+    color: #9a5a28;
+}
+
+.info-item strong {
+    font-size: 14px;
+    font-weight: 700;
+
+    color: #3d2114;
+}
+
+.info-item small {
+    font-size: 11px;
+
+    line-height: 1.4;
+
+    color: #75675e;
+}
+
+
+/* =========================================
+   FORM CARD
+========================================= */
+
+.contact-form-card {
+    background: #ffffff;
+
+    border: 1px solid #f0dfce;
+
+    border-radius: 15px;
+
+    padding: 22px 25px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 8px 25px rgba(80, 45, 15, 0.06);
+}
+
+.contact-form-card form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+.contact-form-card input,
+.contact-form-card textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 15px;
+
+    border: 1px solid #ead9c9;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    background: #fffdfb;
+
+    color: #3d2114;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    transition: border 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.contact-form-card textarea {
+    resize: vertical;
+
+    min-height: 125px;
+}
+
+.contact-form-card input:focus,
+.contact-form-card textarea:focus {
+    border-color: #b85c00;
+
+    box-shadow:
+        0 0 0 3px rgba(184, 92, 0, 0.08);
+}
+
+.contact-form-card button {
+    align-self: center;
+
+    min-width: 175px;
+
+    padding: 11px 22px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #a05200;
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.contact-form-card button:hover {
+    background: #7f4000;
+
+    transform: translateY(-2px);
+}
+
+.contact-form-card button span {
+    margin-right: 7px;
+}
+
+
+/* =========================================
+   GOOGLE MAP
+========================================= */
+
+.map-container {
+    width: 88%;
+    max-width: 1200px;
+
+    height: 240px;
+
+    margin: 25px auto 0;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    border: 1px solid #ead9c9;
+
+    box-shadow:
+        0 8px 25px rgba(80, 45, 15, 0.06);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+}
+
+
+/* =========================================
+   FAQ
+========================================= */
+
+.faq-section {
+    width: 88%;
+    max-width: 1200px;
+
+    margin: 25px auto 0;
+
+    padding: 25px;
+
+    box-sizing: border-box;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff3e2,
+            #fff9f1
+        );
+
+    border: 1px solid #f0dfce;
+}
+
+.faq-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 20px;
+}
+
+.faq-header h2 {
+    margin: 0;
+
+    font-size: 22px;
+
+    color: #8b4a00;
+}
+
+.faq-line {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    margin: 7px 0;
+}
+
+.faq-line span:first-child,
+.faq-line span:last-child {
+    width: 28px;
+    height: 1px;
+
+    background: #c87520;
+}
+
+.faq-line span:nth-child(2) {
+    font-size: 11px;
+    color: #c87520;
+}
+
+.faq-header p {
+    margin: 0;
+
+    font-size: 12px;
+
+    color: #75675e;
+}
+
+.faq-button {
+    padding: 9px 18px;
+
+    border: 1px solid #a05200;
+
+    border-radius: 20px;
+
+    background: transparent;
+
+    color: #8b4a00;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.faq-button:hover {
+    background: #a05200;
+    color: #ffffff;
+}
+
+
+/* =========================================
+   FAQ LIST
+========================================= */
+
+.faq-list {
+    width: 75%;
+
+    margin-top: 18px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.faq-list details {
+    background: #ffffff;
+
+    border: 1px solid #f0dfce;
+
+    border-radius: 9px;
+
+    overflow: hidden;
+}
+
+.faq-list summary {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 16px;
+
+    cursor: pointer;
+
+    list-style: none;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: #4a2717;
+}
+
+.faq-list summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-list summary span {
+    color: #b85c00;
+
+    font-size: 16px;
+}
+
+.faq-list details p {
+    padding: 0 16px 13px;
+
+    margin: 0;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    color: #75675e;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .contact-hero-content {
+        margin-left: 6%;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-hero-image {
+        opacity: 0.3;
+    }
+
+    .contact-hero-content {
+        width: 80%;
+    }
+
+    .faq-list {
+        width: 100%;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .contact-hero {
+        min-height: 260px;
+    }
+
+    .contact-hero-content {
+        width: 85%;
+
+        margin: 0 auto;
+
+        text-align: center;
+    }
+
+    .contact-hero h1 {
+        font-size: 34px;
+    }
+
+    .contact-divider {
+        justify-content: center;
+    }
+
+    .contact-hero p {
+        font-size: 14px;
+    }
+
+    .contact-hero-image {
+        width: 100%;
+        opacity: 0.15;
+    }
+
+    .contact-container {
+        width: 92%;
+
+        gap: 25px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form-card {
+        padding: 20px;
+    }
+
+    .map-container {
+        width: 92%;
+        height: 220px;
+    }
+
+    .faq-section {
+        width: 92%;
+        padding: 20px;
+    }
+
+    .faq-header {
+        flex-direction: column;
+    }
+
+    .faq-button {
+        align-self: flex-start;
+    }
+}
