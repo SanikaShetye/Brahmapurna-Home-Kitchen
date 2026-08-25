@@ -31,6 +31,10 @@ function Home() {
 
                 setCategories(categoryResponse.data);
                 setFoods(foodResponse.data);
+
+                console.log("CATEGORIES:", categoryResponse.data);
+                console.log("FOODS:", foodResponse.data);
+
             } catch (error) {
                 console.error(error);
                 setError("Unable to load menu data.");
@@ -42,13 +46,21 @@ function Home() {
         fetchData();
     }, []);
 
+    // =========================================
+    // FILTER FOODS BY CATEGORY
+    // =========================================
+
     const filteredFoods =
         selectedCategory === "all"
             ? foods
             : foods.filter(
                 (food) =>
-                    food.category?._id === selectedCategory
+                    food.categoryId?._id === selectedCategory
             );
+
+    // =========================================
+    // LOADING
+    // =========================================
 
     if (loading) {
         return (
@@ -58,6 +70,10 @@ function Home() {
         );
     }
 
+    // =========================================
+    // ERROR
+    // =========================================
+
     if (error) {
         return (
             <div className="error">
@@ -65,6 +81,10 @@ function Home() {
             </div>
         );
     }
+
+    // =========================================
+    // PAGE
+    // =========================================
 
     return (
         <div className="home">

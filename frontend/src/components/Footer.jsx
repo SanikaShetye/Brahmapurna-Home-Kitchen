@@ -84,7 +84,7 @@ function Footer() {
 
                     <div className="contact-item">
                         <span className="contact-icon">📞</span>
-                        <span>+91 XXXXXX XXXXX</span>
+                        <span>+91 76664 41794</span>
                     </div>
 
                     <div className="contact-item">
