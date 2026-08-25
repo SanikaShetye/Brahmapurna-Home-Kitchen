@@ -4,7 +4,7 @@ const Food = require("../models/Food");
 const getFoods = async (req, res) => {
     try {
         const foods = await Food.find()
-            .populate("category", "name");
+            .populate("categoryId", "name");
 
         res.status(200).json(foods);
     } catch (error) {
@@ -15,11 +15,12 @@ const getFoods = async (req, res) => {
     }
 };
 
+
 // Get single food item
 const getFoodById = async (req, res) => {
     try {
         const food = await Food.findById(req.params.id)
-            .populate("category", "name");
+            .populate("categoryId", "name");
 
         if (!food) {
             return res.status(404).json({
@@ -36,28 +37,31 @@ const getFoodById = async (req, res) => {
     }
 };
 
+
 // Create food item
 const createFood = async (req, res) => {
     try {
         const {
             name,
-            category,
+            categoryId,
             description,
             price,
+            unit,
             image,
             available
         } = req.body;
 
         const food = await Food.create({
             name,
-            category,
+            categoryId,
             description,
             price,
+            unit,
             image,
             available
         });
 
-        const createdFood = await food.populate("category", "name");
+        const createdFood = await food.populate("categoryId", "name");
 
         res.status(201).json(createdFood);
     } catch (error) {
@@ -67,6 +71,7 @@ const createFood = async (req, res) => {
         });
     }
 };
+
 
 module.exports = {
     getFoods,
