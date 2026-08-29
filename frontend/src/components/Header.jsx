@@ -1,5 +1,5 @@
 import "../css/Header.css";
-
+import { Link } from "react-router-dom";
 function Header() {
     return (
         <header className="header">
@@ -84,10 +84,10 @@ function Header() {
 
 
             {/* Cart */}
-            <button className="cart-button">
+            <Link to="/cart" className="cart-button">
                 <span className="cart-icon">🛒</span>
                 <span>Cart</span>
-            </button>
+            </Link>
 
         </header>
     );

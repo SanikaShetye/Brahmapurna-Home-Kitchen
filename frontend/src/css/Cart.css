@@ -1,0 +1,106 @@
+/* =========================================
+   CART PAGE
+========================================= */
+
+.cart-page {
+    min-height: 100vh;
+    background: #fffaf4;
+    color: #3b2015;
+}
+
+
+/* =========================================
+   CART CONTAINER
+========================================= */
+
+.cart-container {
+    min-height: 600px;
+    padding: 60px 8%;
+}
+
+.cart-container h1 {
+    text-align: center;
+    font-size: 38px;
+    color: #4a2415;
+    margin-bottom: 40px;
+}
+
+
+/* =========================================
+   EMPTY CART
+========================================= */
+
+.empty-cart {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 1px solid #f0dcc8;
+    border-radius: 20px;
+    padding: 60px 30px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(91, 49, 20, 0.08);
+}
+
+.empty-cart-icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.empty-cart h2 {
+    font-size: 26px;
+    color: #4a2415;
+    margin-bottom: 10px;
+}
+
+.empty-cart p {
+    font-size: 16px;
+    color: #765c4c;
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   BROWSE MENU BUTTON
+========================================= */
+
+.browse-menu-btn {
+    border: none;
+    background: #9a5200;
+    color: white;
+    padding: 13px 28px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.browse-menu-btn:hover {
+    background: #7d4100;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .cart-container {
+        padding: 40px 20px;
+    }
+
+    .cart-container h1 {
+        font-size: 30px;
+    }
+
+    .empty-cart {
+        padding: 45px 20px;
+    }
+
+    .empty-cart h2 {
+        font-size: 22px;
+    }
+
+}
