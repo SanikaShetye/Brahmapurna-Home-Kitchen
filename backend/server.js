@@ -7,6 +7,7 @@ const connectDB = require("./config/db");
 const foodRoutes = require("./routes/FoodRoutes");
 const categoryRoutes = require("./routes/CategoryRoutes");
 
+const authRoutes = require("./routes/AuthRoutes");
 // Load environment variables
 dotenv.config();
 
@@ -29,7 +30,7 @@ app.get("/", (req, res) => {
 // API Routes
 app.use("/api/foods", foodRoutes);
 app.use("/api/categories", categoryRoutes);
-
+app.use("/api/auth", authRoutes);
 // Server port
 const PORT = process.env.PORT || 5000;
 

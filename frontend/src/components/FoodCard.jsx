@@ -1,11 +1,27 @@
 import "../css/FoodCard.css";
 
 function FoodCard({ food }) {
+
+    const handleAddToCart = () => {
+
+        const user = localStorage.getItem("user");
+
+        // If user is not logged in
+        if (!user) {
+            window.location.href = "/login";
+            return;
+        }
+
+        // If user is logged in
+        console.log("Adding to cart:", food);
+    };
+
     return (
         <div className="food-card">
 
             {/* Food Image */}
             <div className="food-image">
+
                 {food.image ? (
                     <img
                         src={food.image}
@@ -16,7 +32,9 @@ function FoodCard({ food }) {
                         No Image
                     </div>
                 )}
+
             </div>
+
 
             {/* Food Details */}
             <div className="food-info">
@@ -26,6 +44,7 @@ function FoodCard({ food }) {
                 <p>
                     {food.description}
                 </p>
+
 
                 {/* Price + Add to Cart */}
                 <div className="food-bottom">
@@ -37,6 +56,7 @@ function FoodCard({ food }) {
                     <button
                         type="button"
                         className="add-cart-btn"
+                        onClick={handleAddToCart}
                     >
                         Add to Cart
                     </button>

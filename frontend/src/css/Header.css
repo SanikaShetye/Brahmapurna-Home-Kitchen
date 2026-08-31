@@ -8,7 +8,6 @@
 
     display: flex;
     align-items: center;
-    justify-content: space-between;
 
     padding: 0 40px;
     box-sizing: border-box;
@@ -19,6 +18,8 @@
 
     position: relative;
     z-index: 1000;
+
+    white-space: nowrap;
 }
 
 
@@ -29,6 +30,7 @@
 .brand {
     display: flex;
     align-items: center;
+
     gap: 10px;
 
     flex-shrink: 0;
@@ -46,6 +48,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    flex-shrink: 0;
 }
 
 .brand-logo-icon {
@@ -69,6 +73,8 @@
     text-align: left;
 
     line-height: 1;
+
+    white-space: nowrap;
 }
 
 .brand-text h2 {
@@ -104,10 +110,12 @@
     display: flex;
     align-items: center;
 
-    gap: 38px;
+    gap: 32px;
 
     margin-left: auto;
-    margin-right: 45px;
+    margin-right: 28px;
+
+    white-space: nowrap;
 }
 
 .navbar a {
@@ -120,6 +128,8 @@
 
     color: #3d2114;
 
+    white-space: nowrap;
+
     transition: color 0.25s ease;
 }
 
@@ -129,7 +139,23 @@
 
 
 /* =========================================
-   CART
+   HEADER RIGHT SIDE
+========================================= */
+
+.header-right {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   CART BUTTON
 ========================================= */
 
 .cart-button {
@@ -137,24 +163,24 @@
     align-items: center;
     justify-content: center;
 
-    gap: 8px;
+    gap: 6px;
 
-    min-width: 125px;
-    height: 50px;
+    width: 105px;
+    height: 42px;
 
-    padding: 0 18px;
+    padding: 0;
 
     border: none;
-    border-radius: 13px;
+    border-radius: 10px;
 
     background: #8b4a00;
-
     color: #ffffff;
 
     font-family: Arial, sans-serif;
-
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
+
+    text-decoration: none;
 
     cursor: pointer;
 
@@ -163,11 +189,130 @@
 
 .cart-button:hover {
     background: #6f3900;
+
     transform: translateY(-2px);
 }
 
 .cart-icon {
-    font-size: 20px;
+    font-size: 17px;
+}
+
+
+/* =========================================
+   LOGGED-IN USER
+========================================= */
+
+.user-info {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    color: #3d2114;
+
+    white-space: nowrap;
+}
+
+
+/* USER ICON */
+
+.user-icon {
+    font-size: 17px;
+}
+
+
+/* USER NAME */
+
+.user-name {
+    font-weight: 600;
+
+    color: #3d2114;
+}
+
+
+/* =========================================
+   LOGOUT BUTTON
+========================================= */
+
+.logout-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 78px;
+    height: 38px;
+
+    padding: 0;
+
+    border: 1px solid #8b4a00;
+    border-radius: 8px;
+
+    background: #ffffff;
+    color: #8b4a00;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.logout-button:hover {
+    background: #8b4a00;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   LOGIN BUTTON
+   For logged-out users
+========================================= */
+
+.login-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 82px;
+    height: 40px;
+
+    padding: 0;
+
+    border: 1px solid #8b4a00;
+    border-radius: 9px;
+
+    background: #ffffff;
+    color: #8b4a00;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.login-button:hover {
+    background: #8b4a00;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
 }
 
 
@@ -175,17 +320,20 @@
    TABLET
 ========================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
 
     .header {
-        height: 72px;
         padding: 0 25px;
     }
 
-    .brand-logo,
-    .brand-logo-icon {
-        width: 48px;
-        height: 48px;
+    .navbar {
+        gap: 22px;
+
+        margin-right: 18px;
+    }
+
+    .navbar a {
+        font-size: 15px;
     }
 
     .brand-text h2 {
@@ -196,19 +344,98 @@
         font-size: 13px;
     }
 
+    .cart-button {
+        width: 95px;
+        height: 40px;
+
+        font-size: 13px;
+    }
+
+    .login-button {
+        width: 80px;
+        height: 38px;
+
+        font-size: 13px;
+    }
+
+    .user-info {
+        font-size: 13px;
+    }
+
+    .logout-button {
+        width: 72px;
+        height: 36px;
+
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================
+   SMALL TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+    .header {
+        padding: 0 18px;
+    }
+
+    .brand-logo,
+    .brand-logo-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .brand-text h2 {
+        font-size: 20px;
+    }
+
+    .brand-text span {
+        font-size: 12px;
+    }
+
     .navbar {
-        gap: 24px;
-        margin-right: 25px;
+        gap: 15px;
+
+        margin-right: 12px;
     }
 
     .navbar a {
-        font-size: 15px;
+        font-size: 14px;
+    }
+
+    .header-right {
+        gap: 7px;
     }
 
     .cart-button {
-        min-width: 105px;
-        height: 45px;
-        font-size: 14px;
+        width: 90px;
+        height: 40px;
+
+        font-size: 13px;
+    }
+
+    .login-button {
+        width: 75px;
+        height: 38px;
+
+        font-size: 13px;
+    }
+
+    .user-info {
+        font-size: 12px;
+    }
+
+    .logout-button {
+        width: 68px;
+        height: 35px;
+
+        font-size: 12px;
+    }
+
+    .cart-icon {
+        font-size: 16px;
     }
 }
 
@@ -258,18 +485,50 @@
         font-size: 13px;
     }
 
+    .header-right {
+        gap: 6px;
+    }
+
     .cart-button {
-        min-width: 90px;
-        height: 40px;
+        width: 82px;
+        height: 38px;
 
-        padding: 0 12px;
+        padding: 0 7px;
 
-        border-radius: 10px;
+        border-radius: 9px;
 
-        font-size: 13px;
+        font-size: 12px;
+    }
+
+    .login-button {
+        width: 70px;
+        height: 36px;
+
+        padding: 0 7px;
+
+        border-radius: 8px;
+
+        font-size: 12px;
+    }
+
+    .user-info {
+        font-size: 11px;
+    }
+
+    .user-icon {
+        font-size: 15px;
+    }
+
+    .logout-button {
+        width: 62px;
+        height: 34px;
+
+        border-radius: 7px;
+
+        font-size: 11px;
     }
 
     .cart-icon {
-        font-size: 17px;
+        font-size: 15px;
     }
 }

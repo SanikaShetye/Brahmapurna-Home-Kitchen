@@ -33,8 +33,8 @@ function Home() {
                 setFoods(foodResponse.data);
 
                 console.log("CATEGORIES:", categoryResponse.data);
-                console.log("FOODS:", foodResponse.data);
-
+                console.log("FIRST FOOD:", foodResponse.data[0]);
+                console.log("FIRST FOOD CATEGORY:", foodResponse.data[0]?.category);
             } catch (error) {
                 console.error(error);
                 setError("Unable to load menu data.");
@@ -51,13 +51,16 @@ function Home() {
     // =========================================
 
     const filteredFoods =
-        selectedCategory === "all"
-            ? foods
-            : foods.filter(
-                (food) =>
-                    food.categoryId?._id === selectedCategory
-            );
-
+    selectedCategory === "all"
+        ? foods.filter(
+            (food) =>
+                food.categoryId?._id !== "6a8418d43e218c1d7dbd0749"
+        )
+        : foods.filter(
+            (food) =>
+                food.categoryId?._id === selectedCategory
+        );
+        
     // =========================================
     // LOADING
     // =========================================

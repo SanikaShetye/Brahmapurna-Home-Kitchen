@@ -1,11 +1,29 @@
 import "../css/Header.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+
 function Header() {
+
+    const navigate = useNavigate();
+
+    const [user, setUser] = useState(
+        JSON.parse(localStorage.getItem("user"))
+    );
+
+    const handleLogout = () => {
+        localStorage.removeItem("user");
+        setUser(null);
+        navigate("/");
+    };
+
     return (
         <header className="header">
 
-            {/* Brand */}
-            <div className="brand">
+            {/* =========================
+                BRAND
+            ========================= */}
+
+            <Link to="/" className="brand">
 
                 <div className="brand-logo">
                     <svg
@@ -66,28 +84,78 @@ function Header() {
                     <span>Home Kitchen</span>
                 </div>
 
-            </div>
+            </Link>
 
 
-            {/* Navigation */}
+            {/* =========================
+                NAVIGATION
+            ========================= */}
+
             <nav className="navbar">
 
-                <a href="/">Home</a>
+                <Link to="/">Home</Link>
 
-                <a href="/menu">Menu</a>
+                <Link to="/menu">Menu</Link>
 
-                <a href="/about">About Us</a>
+                <Link to="/about">About Us</Link>
 
-                <a href="/contact">Contact</a>
+                <Link to="/contact">Contact</Link>
 
             </nav>
 
 
-            {/* Cart */}
-            <Link to="/cart" className="cart-button">
-                <span className="cart-icon">🛒</span>
-                <span>Cart</span>
-            </Link>
+            {/* =========================
+                RIGHT SIDE
+            ========================= */}
+
+            <div className="header-right">
+
+                {/* CART */}
+
+                <Link to="/cart" className="cart-button">
+                    <span className="cart-icon">🛒</span>
+                    <span>Cart</span>
+                </Link>
+
+
+                {/* USER */}
+
+                {user ? (
+                    <>
+
+                        <div className="user-info">
+
+                            <span className="user-icon">
+                                👤
+                            </span>
+
+                            <span className="user-name">
+                                {user.name}
+                            </span>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            className="logout-button"
+                            onClick={handleLogout}
+                        >
+                            Logout
+                        </button>
+
+                    </>
+                ) : (
+
+                    <Link
+                        to="/login"
+                        className="login-button"
+                    >
+                        Login
+                    </Link>
+
+                )}
+
+            </div>
 
         </header>
     );
