@@ -10,9 +10,12 @@ function Header() {
         JSON.parse(localStorage.getItem("user"))
     );
 
+    const [showUserMenu, setShowUserMenu] = useState(false);
+
     const handleLogout = () => {
         localStorage.removeItem("user");
         setUser(null);
+        setShowUserMenu(false);
         navigate("/");
     };
 
@@ -118,33 +121,57 @@ function Header() {
                 </Link>
 
 
-                {/* USER */}
+                {/* =========================
+                    LOGGED IN USER
+                ========================= */}
 
                 {user ? (
-                    <>
 
-                        <div className="user-info">
+                    <div className="user-menu-container">
 
-                            <span className="user-icon">
-                                👤
-                            </span>
-
-                            <span className="user-name">
-                                {user.name}
-                            </span>
-
-                        </div>
+                        {/* USER ICON */}
 
                         <button
                             type="button"
-                            className="logout-button"
-                            onClick={handleLogout}
+                            className="user-icon-button"
+                            onClick={() =>
+                                setShowUserMenu(!showUserMenu)
+                            }
+                            aria-label="User menu"
                         >
-                            Logout
+                            👤
                         </button>
 
-                    </>
+
+                        {/* USER DROPDOWN */}
+
+                        {showUserMenu && (
+
+                            <div className="user-dropdown">
+
+                                <div className="dropdown-user-name">
+                                    👤 {user.name}
+                                </div>
+
+                                <button
+                                    type="button"
+                                    className="logout-button"
+                                    onClick={handleLogout}
+                                >
+                                    Logout
+                                </button>
+
+                            </div>
+
+                        )}
+
+                    </div>
+
                 ) : (
+
+                    /* =========================
+                       LOGGED OUT
+                    ========================= */
 
                     <Link
                         to="/login"

@@ -34,6 +34,13 @@
     gap: 10px;
 
     flex-shrink: 0;
+
+    text-decoration: none;
+    color: inherit;
+}
+
+.brand:hover {
+    text-decoration: none;
 }
 
 
@@ -88,6 +95,8 @@
     line-height: 1.1;
 
     color: #7b3f00;
+
+    text-decoration: none;
 }
 
 .brand-text span {
@@ -99,6 +108,8 @@
     font-weight: 400;
 
     color: #8a7668;
+
+    text-decoration: none;
 }
 
 
@@ -135,6 +146,8 @@
 
 .navbar a:hover {
     color: #8b4a00;
+
+    text-decoration: none;
 }
 
 
@@ -177,6 +190,7 @@
     color: #ffffff;
 
     font-family: Arial, sans-serif;
+
     font-size: 14px;
     font-weight: 700;
 
@@ -191,6 +205,8 @@
     background: #6f3900;
 
     transform: translateY(-2px);
+
+    text-decoration: none;
 }
 
 .cart-icon {
@@ -199,39 +215,116 @@
 
 
 /* =========================================
-   LOGGED-IN USER
+   USER MENU CONTAINER
 ========================================= */
 
-.user-info {
+.user-menu-container {
+    position: relative;
+
     display: flex;
     align-items: center;
+    justify-content: center;
+}
 
-    gap: 6px;
 
+/* =========================================
+   USER ICON BUTTON
+========================================= */
+
+.user-icon-button {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f5eee7;
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.user-icon-button:hover {
+    background: #eadbcf;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   USER DROPDOWN
+========================================= */
+
+.user-dropdown {
+    position: absolute;
+
+    top: 52px;
+    right: 0;
+
+    width: 190px;
+
+    padding: 14px;
+
+    background: #ffffff;
+
+    border: 1px solid #eadfd5;
+
+    border-radius: 12px;
+
+    box-shadow: 0 8px 25px rgba(61, 33, 20, 0.15);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    animation: dropdownShow 0.2s ease;
+}
+
+
+/* =========================================
+   DROPDOWN ANIMATION
+========================================= */
+
+@keyframes dropdownShow {
+
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   DROPDOWN USER NAME
+========================================= */
+
+.dropdown-user-name {
     font-family: Arial, sans-serif;
 
     font-size: 14px;
-    font-weight: 500;
-
-    color: #3d2114;
-
-    white-space: nowrap;
-}
-
-
-/* USER ICON */
-
-.user-icon {
-    font-size: 17px;
-}
-
-
-/* USER NAME */
-
-.user-name {
     font-weight: 600;
 
     color: #3d2114;
+
+    padding: 8px 6px;
+
+    border-bottom: 1px solid #eadfd5;
 }
 
 
@@ -240,12 +333,12 @@
 ========================================= */
 
 .logout-button {
+    width: 100%;
+    height: 38px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-
-    width: 78px;
-    height: 38px;
 
     padding: 0;
 
@@ -276,7 +369,6 @@
 
 /* =========================================
    LOGIN BUTTON
-   For logged-out users
 ========================================= */
 
 .login-button {
@@ -313,6 +405,8 @@
     color: #ffffff;
 
     transform: translateY(-1px);
+
+    text-decoration: none;
 }
 
 
@@ -351,6 +445,13 @@
         font-size: 13px;
     }
 
+    .user-icon-button {
+        width: 40px;
+        height: 40px;
+
+        font-size: 19px;
+    }
+
     .login-button {
         width: 80px;
         height: 38px;
@@ -358,16 +459,6 @@
         font-size: 13px;
     }
 
-    .user-info {
-        font-size: 13px;
-    }
-
-    .logout-button {
-        width: 72px;
-        height: 36px;
-
-        font-size: 13px;
-    }
 }
 
 
@@ -416,6 +507,13 @@
         font-size: 13px;
     }
 
+    .user-icon-button {
+        width: 38px;
+        height: 38px;
+
+        font-size: 18px;
+    }
+
     .login-button {
         width: 75px;
         height: 38px;
@@ -423,20 +521,11 @@
         font-size: 13px;
     }
 
-    .user-info {
-        font-size: 12px;
+    .user-dropdown {
+        top: 48px;
+        width: 175px;
     }
 
-    .logout-button {
-        width: 68px;
-        height: 35px;
-
-        font-size: 12px;
-    }
-
-    .cart-icon {
-        font-size: 16px;
-    }
 }
 
 
@@ -500,6 +589,13 @@
         font-size: 12px;
     }
 
+    .user-icon-button {
+        width: 36px;
+        height: 36px;
+
+        font-size: 17px;
+    }
+
     .login-button {
         width: 70px;
         height: 36px;
@@ -511,24 +607,23 @@
         font-size: 12px;
     }
 
-    .user-info {
-        font-size: 11px;
+    .user-dropdown {
+        top: 44px;
+        right: 0;
+
+        width: 165px;
+
+        padding: 12px;
     }
 
-    .user-icon {
-        font-size: 15px;
+    .dropdown-user-name {
+        font-size: 13px;
     }
 
     .logout-button {
-        width: 62px;
         height: 34px;
 
-        border-radius: 7px;
-
-        font-size: 11px;
+        font-size: 12px;
     }
 
-    .cart-icon {
-        font-size: 15px;
-    }
 }

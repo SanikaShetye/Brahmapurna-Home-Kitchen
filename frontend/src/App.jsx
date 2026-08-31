@@ -8,27 +8,34 @@ import Cart from "./pages/Cart";
 import Login from "./pages/Login";
 import Signup from "./pages/SignUp";
 
+import { CartProvider } from "./context/CartContext";
+
+
 function App() {
     return (
         <BrowserRouter>
 
-            <Routes>
+            <CartProvider>
 
-                <Route path="/" element={<Home />} />
+                <Routes>
 
-                <Route path="/about" element={<About />} />
-                
-                <Route path="/menu" element={<MenuHeader />} />
+                    <Route path="/" element={<Home />} />
 
-                <Route path="/contact" element={<Contact />} />
+                    <Route path="/about" element={<About />} />
 
-                <Route path="/cart" element={<Cart />} />
+                    <Route path="/menu" element={<MenuHeader />} />
 
-                <Route path="/login" element={<Login />} />
+                    <Route path="/contact" element={<Contact />} />
 
-                <Route path="/signup" element={<Signup />} />
+                    <Route path="/cart" element={<Cart />} />
 
-            </Routes>
+                    <Route path="/login" element={<Login />} />
+
+                    <Route path="/signup" element={<Signup />} />
+
+                </Routes>
+
+            </CartProvider>
 
         </BrowserRouter>
     );
