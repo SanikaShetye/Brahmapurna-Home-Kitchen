@@ -6,7 +6,14 @@ export function CartProvider({ children }) {
 
     const [cartItems, setCartItems] = useState([]);
 
+    // Notification message
+    const [cartMessage, setCartMessage] = useState("");
+
+
+    // =========================================
     // ADD TO CART
+    // =========================================
+
     const addToCart = (food) => {
 
         setCartItems((currentItems) => {
@@ -36,10 +43,22 @@ export function CartProvider({ children }) {
                 }
             ];
         });
+
+
+        // Show notification
+        setCartMessage(`${food.name} added to cart!`);
+
+        // Automatically hide notification
+        setTimeout(() => {
+            setCartMessage("");
+        }, 2500);
     };
 
 
+    // =========================================
     // REMOVE FROM CART
+    // =========================================
+
     const removeFromCart = (foodId) => {
 
         setCartItems((currentItems) =>
@@ -50,7 +69,10 @@ export function CartProvider({ children }) {
     };
 
 
+    // =========================================
     // INCREASE QUANTITY
+    // =========================================
+
     const increaseQuantity = (foodId) => {
 
         setCartItems((currentItems) =>
@@ -66,7 +88,10 @@ export function CartProvider({ children }) {
     };
 
 
+    // =========================================
     // DECREASE QUANTITY
+    // =========================================
+
     const decreaseQuantity = (foodId) => {
 
         setCartItems((currentItems) =>
@@ -84,16 +109,22 @@ export function CartProvider({ children }) {
     };
 
 
+    // =========================================
     // CLEAR CART
+    // =========================================
+
     const clearCart = () => {
         setCartItems([]);
     };
 
 
+    // =========================================
     // TOTAL PRICE
-    const totalAmount = cartItems.reduce(
+    // =========================================
+
+    const totalPrice = cartItems.reduce(
         (total, item) =>
-            total + item.price * item.quantity,
+            total + Number(item.price) * item.quantity,
         0
     );
 
@@ -107,7 +138,8 @@ export function CartProvider({ children }) {
                 increaseQuantity,
                 decreaseQuantity,
                 clearCart,
-                totalAmount
+                totalPrice,
+                cartMessage
             }}
         >
             {children}
@@ -116,7 +148,10 @@ export function CartProvider({ children }) {
 }
 
 
+// =========================================
 // CUSTOM HOOK
+// =========================================
+
 export function useCart() {
     return useContext(CartContext);
 }

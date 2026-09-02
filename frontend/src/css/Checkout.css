@@ -1,0 +1,650 @@
+/* =========================================
+   CHECKOUT PAGE
+   Brahmapurna Home Kitchen
+========================================= */
+
+.checkout-page {
+    min-height: 100vh;
+    background: #fff8ef;
+    color: #3b2015;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.checkout-container {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 45px 25px 70px;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.checkout-title {
+    text-align: center;
+    margin: 0 0 35px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 42px;
+    font-weight: 700;
+
+    color: #6f3515;
+}
+
+
+/* =========================================
+   LAYOUT
+========================================= */
+
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 1.55fr 0.9fr;
+    gap: 30px;
+    align-items: start;
+}
+
+
+/* =========================================
+   FORM CARD
+========================================= */
+
+.checkout-form-section {
+    background: #fffdf9;
+    border: 1px solid #ead7c1;
+    border-radius: 18px;
+
+    padding: 32px;
+
+    box-shadow: 0 8px 25px rgba(70, 35, 15, 0.08);
+}
+
+.checkout-form-section h2 {
+    margin: 0 0 25px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+
+    color: #6f3515;
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.form-group {
+    margin-bottom: 19px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #4a2a1c;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    border: 1px solid #d9c0a7;
+    border-radius: 9px;
+
+    background: #fffaf4;
+
+    padding: 13px 14px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+
+    color: #3b2015;
+
+    outline: none;
+
+    transition: 0.25s ease;
+}
+
+.form-group input {
+    height: 47px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 105px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #a38c7a;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #8b4a00;
+
+    background: #ffffff;
+
+    box-shadow: 0 0 0 3px rgba(139, 74, 0, 0.08);
+}
+
+
+/* =========================================
+   CITY + PINCODE
+========================================= */
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+
+/* =========================================
+   PAYMENT
+========================================= */
+
+.payment-section {
+    margin-top: 28px;
+    padding-top: 25px;
+
+    border-top: 1px solid #ead7c1;
+}
+
+.payment-section h2 {
+    margin-bottom: 17px;
+}
+
+
+/* =========================================
+   PAYMENT OPTION
+========================================= */
+
+.payment-option {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 48px;
+
+    margin-bottom: 10px;
+    padding: 11px 14px;
+
+    background: #fff8ef;
+
+    border: 1px solid #e1cbb4;
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.payment-option:hover {
+    border-color: #9a5a24;
+    background: #fff3e5;
+}
+
+.payment-option input {
+    width: 17px;
+    height: 17px;
+
+    accent-color: #7b3f00;
+
+    cursor: pointer;
+}
+
+.payment-option span {
+    font-size: 14px;
+    font-weight: 500;
+
+    color: #4a2a1c;
+}
+
+
+/* =========================================
+   PLACE ORDER
+========================================= */
+
+.place-order-button {
+    width: 100%;
+    height: 52px;
+
+    margin-top: 18px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #7b3f00;
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.place-order-button:hover {
+    background: #5e2d00;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 7px 16px rgba(123, 63, 0, 0.2);
+}
+
+
+/* =========================================
+   ORDER SUMMARY CARD
+========================================= */
+
+.checkout-summary {
+    position: sticky;
+    top: 25px;
+
+    background: #3b2015;
+    color: #fff8ef;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 10px 28px rgba(59, 32, 21, 0.18);
+}
+
+.checkout-summary h2 {
+    margin: 0 0 25px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+
+    color: #f5d49a;
+}
+
+
+/* =========================================
+   CHECKOUT ITEMS
+========================================= */
+
+.checkout-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.checkout-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid rgba(255, 248, 239, 0.15);
+}
+
+.checkout-item-info h3 {
+    margin: 0 0 5px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #fff8ef;
+}
+
+.checkout-item-info span {
+    font-size: 12px;
+    color: #d7c1ae;
+}
+
+.checkout-item > strong {
+    white-space: nowrap;
+
+    font-size: 14px;
+
+    color: #f5d49a;
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.summary-divider {
+    width: 100%;
+    height: 1px;
+
+    margin: 20px 0;
+
+    background: rgba(255, 248, 239, 0.18);
+}
+
+
+/* =========================================
+   SUMMARY ROW
+========================================= */
+
+.checkout-summary-row {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 14px;
+
+    font-size: 14px;
+
+    color: #ddc9b7;
+}
+
+.checkout-summary-row span:last-child {
+    color: #fff8ef;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   TOTAL
+========================================= */
+
+.checkout-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+.checkout-total strong {
+    font-size: 23px;
+    color: #f5d49a;
+}
+
+
+/* =========================================
+   ORDER SUCCESS
+========================================= */
+
+.order-success-container {
+    min-height: calc(100vh - 80px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px 20px;
+
+    box-sizing: border-box;
+}
+
+.order-success-card {
+    width: 100%;
+    max-width: 600px;
+
+    padding: 50px 40px;
+
+    text-align: center;
+
+    background: #fffdf9;
+
+    border: 1px solid #ead7c1;
+    border-radius: 20px;
+
+    box-shadow: 0 12px 35px rgba(59, 32, 21, 0.12);
+}
+
+
+/* =========================================
+   SUCCESS ICON
+========================================= */
+
+.success-icon {
+    width: 72px;
+    height: 72px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #f5e1bd;
+
+    color: #7b3f00;
+
+    font-size: 35px;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   SUCCESS TITLE
+========================================= */
+
+.order-success-card h1 {
+    margin: 0 0 15px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 38px;
+
+    color: #6f3515;
+}
+
+
+/* =========================================
+   SUCCESS MESSAGE
+========================================= */
+
+.success-message {
+    margin: 0 auto 20px;
+
+    font-size: 15px;
+    line-height: 1.7;
+
+    color: #735d4c;
+}
+
+.success-message strong {
+    color: #7b3f00;
+}
+
+
+/* =========================================
+   ORDER ID
+========================================= */
+
+.order-id-box {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 5px;
+
+    margin: 10px 0 22px;
+
+    padding: 13px 30px;
+
+    background: #fff4e4;
+
+    border: 1px solid #e4c9a7;
+    border-radius: 10px;
+}
+
+.order-id-box span {
+    font-size: 12px;
+    color: #8c7563;
+}
+
+.order-id-box strong {
+    font-size: 20px;
+    letter-spacing: 1px;
+
+    color: #7b3f00;
+}
+
+
+/* =========================================
+   SUCCESS INFO
+========================================= */
+
+.success-info {
+    max-width: 480px;
+
+    margin: 0 auto 28px;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    color: #806b5b;
+}
+
+
+/* =========================================
+   SUCCESS BUTTONS
+========================================= */
+
+.success-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.continue-shopping-btn,
+.home-btn {
+    min-width: 160px;
+    height: 46px;
+
+    padding: 0 20px;
+
+    border-radius: 9px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+
+/* CONTINUE SHOPPING */
+
+.continue-shopping-btn {
+    border: none;
+
+    background: #7b3f00;
+    color: #ffffff;
+}
+
+.continue-shopping-btn:hover {
+    background: #5e2d00;
+}
+
+
+/* HOME */
+
+.home-btn {
+    border: 1px solid #7b3f00;
+
+    background: #ffffff;
+    color: #7b3f00;
+}
+
+.home-btn:hover {
+    background: #fff4e4;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .checkout-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-summary {
+        position: static;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .checkout-container {
+        padding: 30px 15px 50px;
+    }
+
+    .checkout-title {
+        font-size: 32px;
+        margin-bottom: 25px;
+    }
+
+    .checkout-form-section {
+        padding: 23px 18px;
+        border-radius: 14px;
+    }
+
+    .checkout-summary {
+        padding: 23px 18px;
+        border-radius: 14px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .order-success-container {
+        padding: 30px 15px;
+    }
+
+    .order-success-card {
+        padding: 35px 20px;
+    }
+
+    .order-success-card h1 {
+        font-size: 30px;
+    }
+
+    .success-actions {
+        flex-direction: column;
+    }
+
+    .continue-shopping-btn,
+    .home-btn {
+        width: 100%;
+    }
+}

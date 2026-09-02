@@ -9,29 +9,54 @@ import Login from "./pages/Login";
 import Signup from "./pages/SignUp";
 
 import { CartProvider } from "./context/CartContext";
+import CartToast from "./components/CartToast";
+
+import Checkout from "./pages/Checkout";
 
 
 function App() {
+
     return (
+
         <BrowserRouter>
 
             <CartProvider>
+
+                <CartToast />
 
                 <Routes>
 
                     <Route path="/" element={<Home />} />
 
-                    <Route path="/about" element={<About />} />
+                    <Route
+                        path="/about"
+                        element={<About />}
+                    />
 
-                    <Route path="/menu" element={<MenuHeader />} />
+                    <Route
+                        path="/menu"
+                        element={<MenuHeader />}
+                    />
 
-                    <Route path="/contact" element={<Contact />} />
+                    <Route
+                        path="/contact"
+                        element={<Contact />}
+                    />
 
-                    <Route path="/cart" element={<Cart />} />
+                    <Route
+                        path="/cart"
+                        element={<Cart />}
+                    />
 
-                    <Route path="/login" element={<Login />} />
+                    <Route
+                        path="/login"
+                        element={<Login />}
+                    />
 
-                    <Route path="/signup" element={<Signup />} />
+                    <Route
+                        path="/signup"
+                        element={<Signup />}
+                    />
 
                 </Routes>
 

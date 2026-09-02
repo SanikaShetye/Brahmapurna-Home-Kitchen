@@ -1,35 +1,31 @@
+import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import Header from "../components/Header";
-
 import "../css/Cart.css";
 
-
 function Cart() {
+    const navigate = useNavigate();
 
     const {
-        cart,
+        cartItems,
         increaseQuantity,
         decreaseQuantity,
         removeFromCart,
         totalPrice
     } = useCart();
 
-
     return (
-
         <div className="cart-page">
 
             <Header />
 
-
             <main className="cart-container">
 
-                <h1>
+                <h1 className="cart-title">
                     Your Cart
                 </h1>
 
-
-                {cart.length === 0 ? (
+                {cartItems.length === 0 ? (
 
                     <div className="empty-cart">
 
@@ -49,111 +45,120 @@ function Cart() {
 
                 ) : (
 
-                    <>
+                    <div className="cart-layout">
 
-                        {/* CART ITEMS */}
+                        {/* =========================
+                            CART ITEMS
+                        ========================= */}
 
-                        <div className="cart-items">
+                        <section className="cart-items-section">
 
-                            {cart.map((item) => (
+                            <div className="cart-items">
 
-                                <div
-                                    className="cart-item"
-                                    key={item._id}
-                                >
+                                {cartItems.map((item) => (
 
-                                    <div className="cart-item-image">
+                                    <div
+                                        className="cart-item"
+                                        key={item._id}
+                                    >
 
-                                        {item.image ? (
+                                        {/* IMAGE */}
 
-                                            <img
-                                                src={item.image}
-                                                alt={item.name}
-                                            />
+                                        <div className="cart-item-image">
 
-                                        ) : (
+                                            {item.image ? (
+                                                <img
+                                                    src={item.image}
+                                                    alt={item.name}
+                                                />
+                                            ) : (
+                                                <span>🍽️</span>
+                                            )}
+
+                                        </div>
+
+
+                                        {/* DETAILS */}
+
+                                        <div className="cart-item-details">
+
+                                            <h3>
+                                                {item.name}
+                                            </h3>
+
+                                            <p>
+                                                ₹{Number(item.price)}
+                                            </p>
+
+                                        </div>
+
+
+                                        {/* QUANTITY */}
+
+                                        <div className="quantity-control">
+
+                                            <button
+                                                type="button"
+                                                onClick={() =>
+                                                    decreaseQuantity(item._id)
+                                                }
+                                            >
+                                                −
+                                            </button>
 
                                             <span>
-                                                🍽️
+                                                {item.quantity}
                                             </span>
 
-                                        )}
+                                            <button
+                                                type="button"
+                                                onClick={() =>
+                                                    increaseQuantity(item._id)
+                                                }
+                                            >
+                                                +
+                                            </button>
 
-                                    </div>
-
-
-                                    <div className="cart-item-details">
-
-                                        <h3>
-                                            {item.name}
-                                        </h3>
-
-                                        <p>
-                                            ₹{item.price}
-                                        </p>
-
-                                    </div>
+                                        </div>
 
 
-                                    {/* QUANTITY */}
+                                        {/* ITEM TOTAL */}
 
-                                    <div className="quantity-control">
+                                        <div className="cart-item-total">
 
-                                        <button
-                                            onClick={() =>
-                                                decreaseQuantity(item._id)
-                                            }
-                                        >
-                                            −
-                                        </button>
+                                            ₹
+                                            {Number(item.price) *
+                                                item.quantity}
 
-                                        <span>
-                                            {item.quantity}
-                                        </span>
+                                        </div>
+
+
+                                        {/* REMOVE */}
 
                                         <button
+                                            type="button"
+                                            className="remove-cart-item"
                                             onClick={() =>
-                                                increaseQuantity(item._id)
+                                                removeFromCart(item._id)
                                             }
                                         >
-                                            +
+                                            ✕
                                         </button>
 
                                     </div>
 
+                                ))}
 
-                                    {/* ITEM TOTAL */}
+                            </div>
 
-                                    <div className="cart-item-total">
-
-                                        ₹
-                                        {Number(item.price) *
-                                            item.quantity}
-
-                                    </div>
+                        </section>
 
 
-                                    {/* REMOVE */}
+                        {/* =========================
+                            BILL SUMMARY
+                        ========================= */}
 
-                                    <button
-                                        className="remove-cart-item"
-                                        onClick={() =>
-                                            removeFromCart(item._id)
-                                        }
-                                    >
-                                        ✕
-                                    </button>
-
-                                </div>
-
-                            ))}
-
-                        </div>
-
-
-                        {/* BILL */}
-
-                        <div className="cart-summary">
+                        <aside className="cart-summary">
 
                             <h2>
                                 Bill Summary
@@ -202,16 +207,21 @@ function Cart() {
                             </div>
 
 
+                            {/* =========================
+                                CONFIRM ORDER BUTTON
+                            ========================= */}
+
                             <button
+                                type="button"
                                 className="checkout-button"
+                                onClick={() => navigate("/checkout")}
                             >
-                                Proceed to Checkout
+                                Confirm Order
                             </button>
 
-                        </div>
+                        </aside>
 
-                    </>
-
+                    </div>
                 )}
 
             </main>
