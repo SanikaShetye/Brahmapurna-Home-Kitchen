@@ -2,14 +2,16 @@ const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 
+// Load environment variables FIRST
+dotenv.config();
+
 const connectDB = require("./config/db");
 
 const foodRoutes = require("./routes/FoodRoutes");
 const categoryRoutes = require("./routes/CategoryRoutes");
-
 const authRoutes = require("./routes/AuthRoutes");
-// Load environment variables
-dotenv.config();
+const orderRoutes = require("./routes/OrderRoutes");
+const paymentRoutes = require("./routes/PaymentRoutes");
 
 // Connect to MongoDB
 connectDB();
@@ -31,6 +33,9 @@ app.get("/", (req, res) => {
 app.use("/api/foods", foodRoutes);
 app.use("/api/categories", categoryRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/orders", orderRoutes);
+app.use("/api/payment", paymentRoutes);
+
 // Server port
 const PORT = process.env.PORT || 5000;
 

@@ -58,6 +58,11 @@ function App() {
                         element={<Signup />}
                     />
 
+                    <Route
+                        path="/checkout"
+                        element={<Checkout />}
+                    />
+
                 </Routes>
 
             </CartProvider>
