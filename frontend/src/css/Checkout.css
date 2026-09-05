@@ -648,3 +648,54 @@
         width: 100%;
     }
 }
+/* =========================================
+   CHECKOUT ACTION BUTTONS
+========================================= */
+
+.checkout-buttons {
+    display: flex;
+    gap: 14px;
+    width: 100%;
+    margin-top: 14px;
+}
+
+/* Both buttons */
+.checkout-buttons .checkout-button,
+.checkout-buttons .whatsapp-order-button {
+    flex: 1;
+    width: auto;
+    margin-top: 0;
+    height: 50px;
+}
+
+/* WhatsApp */
+.checkout-buttons .whatsapp-order-button {
+    border: 1px solid #25d366;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #168c45;
+
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 600;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.checkout-buttons .whatsapp-order-button:hover {
+    background: #25d366;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(37, 211, 102, 0.25);
+}
+
+.whatsapp-icon {
+    font-size: 21px;
+}

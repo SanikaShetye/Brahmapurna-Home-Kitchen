@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import Header from "../components/Header";
 import "../css/Checkout.css";
-
+import { FaWhatsapp } from "react-icons/fa";
 function Checkout() {
     const navigate = useNavigate();
 
@@ -552,8 +552,50 @@ function Checkout() {
             </div>
         );
     }
+    // =========================
+    // HANDLE WHATSAPP ORDER
+    // =========================
+        const handleWhatsAppOrder = () => {
+        if (cartItems.length === 0) {
+            alert("Your cart is empty.");
+            return;
+        }
 
+        const itemsMessage = cartItems
+            .map(
+                (item, index) =>
+                    `${index + 1}. ${item.name} x ${item.quantity} - ₹${Number(item.price) * item.quantity}`
+            )
+            .join("\n");
 
+        const message = `Hello Brahmapurna Home Kitchen,
+
+            I would like to place an order.
+
+            ORDER ITEMS:
+            ${itemsMessage}
+
+            Subtotal: ₹${totalPrice}
+            Delivery: ₹0
+            TOTAL: ₹${totalPrice}
+
+            CUSTOMER DETAILS:
+            Name: ${formData.name}
+            Phone: ${formData.phone}
+            Address: ${formData.address}
+            City: ${formData.city}
+            Pincode: ${formData.pincode}
+
+            Please confirm my order.
+
+            Thank you!`;
+
+                const whatsappUrl = `https://wa.me/917666441794?text=${encodeURIComponent(
+                    message
+                )}`;
+
+                window.open(whatsappUrl, "_blank");
+            };
     // =========================
     // CHECKOUT PAGE
     // =========================
@@ -754,19 +796,25 @@ function Checkout() {
                             {/* =========================
                                 PLACE ORDER BUTTON
                             ========================= */}
+                            <div className="checkout-buttons">
+                                <button
+                                    type="submit"
+                                    className="checkout-button"
+                                    disabled={loading}
+                                >
+                                    {loading ? "Processing..." : "Place Order"}
+                                </button>
 
-                            <button
-                                type="submit"
-                                className="place-order-button"
-                                disabled={loading}
-                            >
+                                <button
+                                    type="button"
+                                    className="whatsapp-order-button"
+                                    onClick={handleWhatsAppOrder}
+                                >
+                                    <FaWhatsapp className="whatsapp-icon" />
+                                    Order via WhatsApp
+                                </button>
 
-                                {loading
-                                    ? "Processing Payment..."
-                                    : "Place Order"}
-
-                            </button>
-
+                            </div>
                         </form>
 
                     </section>
