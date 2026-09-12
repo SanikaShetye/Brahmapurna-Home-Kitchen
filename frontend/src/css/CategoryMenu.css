@@ -1,86 +1,80 @@
-/* =========================================
-   CATEGORY MENU
-   Brahmapurna Home Kitchen
-========================================= */
 .category-menu-wrapper {
     position: relative;
-    z-index: 10;
 
     width: 100%;
-
-    margin-top: -35px;
-
-    padding: 0 30px;
-
-    box-sizing: border-box;
-}
-
-/* =========================================
-   CATEGORY BAR
-========================================= */
-
-.category-menu {
-    width: 100%;
-
-    max-width: 1180px;
+    max-width: 1380px;
 
     margin: 0 auto;
 
-    padding: 14px 22px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 12px;
-
-    flex-wrap: wrap;
+    padding: 18px 70px;
 
     background: #ffffff;
 
-    border: 1px solid #f1dfca;
-
-    border-radius: 16px;
-
-    box-shadow:
-        0 8px 25px rgba(91, 48, 15, 0.08);
+    border: 1px solid #ead9c7;
+    border-radius: 20px;
 
     box-sizing: border-box;
+
+    box-shadow: 0 8px 25px rgba(92, 52, 20, 0.06);
 }
 
 
-/* =========================================
-   CATEGORY BUTTON
-========================================= */
+/* ================================
+   CATEGORY SLIDER
+================================ */
 
-.category-item {
-    display: inline-flex;
-
+.category-slider {
+    display: flex;
     align-items: center;
 
+    gap: 14px;
+
+    width: 100%;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-behavior: smooth;
+
+    scrollbar-width: none;
+
+    padding: 2px 0;
+}
+
+.category-slider::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* ================================
+   CATEGORY BUTTON
+================================ */
+
+.category-item {
+    flex: 0 0 auto;
+
+    height: 52px;
+
+    padding: 0 24px;
+
+    display: flex;
+    align-items: center;
     justify-content: center;
 
-    gap: 7px;
+    gap: 10px;
 
-    padding: 9px 17px;
-
-    min-height: 38px;
-
-    border-radius: 22px;
-
-    border: 1px solid #ead9c5;
+    border: 1px solid #ead9c7;
+    border-radius: 30px;
 
     background: #ffffff;
 
-    color: #4b3022;
+    color: #3d2415;
 
-    font-size: 13px;
-
+    font-family: inherit;
+    font-size: 16px;
     font-weight: 600;
 
-    font-family: Arial, Helvetica, sans-serif;
+    white-space: nowrap;
 
     cursor: pointer;
 
@@ -93,93 +87,180 @@
 }
 
 
-/* =========================================
-   ICON
-========================================= */
+/* Icon */
 
 .category-icon {
-    display: inline-flex;
+    font-size: 15px;
+    color: #b9a6cf;
 
-    align-items: center;
-
-    justify-content: center;
-
-    width: 22px;
-
-    height: 22px;
-
-    font-size: 16px;
+    transition: color 0.25s ease;
 }
 
 
-/* =========================================
-   HOVER
-========================================= */
+/* Hover */
 
 .category-item:hover {
-    border-color: #8b4a00;
+    border-color: #a85b00;
 
-    color: #8b4a00;
+    color: #8d4d00;
 
     transform: translateY(-2px);
 
-    box-shadow:
-        0 4px 12px rgba(139, 74, 0, 0.10);
+    box-shadow: 0 5px 12px rgba(141, 77, 0, 0.10);
 }
 
 
-/* =========================================
-   ACTIVE CATEGORY
-========================================= */
+/* Active */
 
 .category-item.active {
-    background: #8b4a00;
+    background: #995500;
 
-    border-color: #8b4a00;
+    border-color: #995500;
 
     color: #ffffff;
 
-    box-shadow:
-        0 5px 14px rgba(139, 74, 0, 0.20);
+    box-shadow: 0 6px 15px rgba(153, 85, 0, 0.22);
 }
 
-.category-item.active:hover {
-    background: #713b00;
-
+.category-item.active .category-icon {
     color: #ffffff;
 }
 
 
-/* =========================================
-   MOBILE
-========================================= */
+/* ================================
+   LEFT / RIGHT ARROWS
+================================ */
 
-@media (max-width: 700px) {
+.category-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #dfc9b1;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #8d4d00;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    box-shadow: 0 4px 12px rgba(80, 45, 20, 0.12);
+
+    transition: all 0.25s ease;
+}
+
+.category-arrow:hover {
+    background: #995500;
+
+    border-color: #995500;
+
+    color: #ffffff;
+
+    transform: translateY(-50%) scale(1.05);
+}
+
+
+/* Left */
+
+.category-arrow-left {
+    left: 14px;
+}
+
+
+/* Right */
+
+.category-arrow-right {
+    right: 14px;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 1000px) {
 
     .category-menu-wrapper {
-        margin-top: -20px;
-
-        padding: 0 15px;
-    }
-
-    .category-menu {
-        padding: 12px;
-
-        gap: 8px;
-
-        border-radius: 14px;
+        padding-left: 60px;
+        padding-right: 60px;
     }
 
     .category-item {
-        padding: 8px 13px;
+        height: 48px;
 
-        font-size: 12px;
+        padding: 0 20px;
+
+        font-size: 15px;
     }
 
-    .category-icon {
-        width: 20px;
-        height: 20px;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    .category-menu-wrapper {
+        padding: 14px 16px;
+
+        border-radius: 16px;
+    }
+
+    .category-slider {
+        gap: 10px;
+
+        overflow-x: auto;
+
+        scroll-snap-type: x proximity;
+    }
+
+    .category-item {
+        height: 46px;
+
+        padding: 0 18px;
 
         font-size: 14px;
+
+        scroll-snap-align: start;
     }
+
+    /* Hide arrows on mobile.
+       User can swipe naturally. */
+
+    .category-arrow {
+        display: none;
+    }
+}
+.category-menu {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.category-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.category-item {
+    flex: 0 0 auto;
 }

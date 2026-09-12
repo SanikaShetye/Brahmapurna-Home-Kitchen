@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import "../css/CategoryMenu.css";
 
 function CategoryMenu({
@@ -5,13 +6,43 @@ function CategoryMenu({
     selectedCategory,
     setSelectedCategory
 }) {
+    const sliderRef = useRef(null);
+
+    const scrollLeft = () => {
+        sliderRef.current?.scrollBy({
+            left: -400,
+            behavior: "smooth"
+        });
+    };
+
+    const scrollRight = () => {
+        sliderRef.current?.scrollBy({
+            left: 400,
+            behavior: "smooth"
+        });
+    };
+
     return (
         <div className="category-menu-wrapper">
 
-            <div className="category-menu">
+            {/* LEFT ARROW */}
+            <button
+                type="button"
+                className="category-arrow category-arrow-left"
+                onClick={scrollLeft}
+            >
+                ‹
+            </button>
+
+            {/* CATEGORY SLIDER */}
+            <div
+                className="category-menu"
+                ref={sliderRef}
+            >
 
                 {/* ALL */}
                 <button
+                    type="button"
                     className={`category-item ${
                         selectedCategory === "all"
                             ? "active"
@@ -26,6 +57,7 @@ function CategoryMenu({
                 {/* DATABASE CATEGORIES */}
                 {categories.map((category) => (
                     <button
+                        type="button"
                         key={category._id}
                         className={`category-item ${
                             selectedCategory === category._id
@@ -45,6 +77,15 @@ function CategoryMenu({
                 ))}
 
             </div>
+
+            {/* RIGHT ARROW */}
+            <button
+                type="button"
+                className="category-arrow category-arrow-right"
+                onClick={scrollRight}
+            >
+                ›
+            </button>
 
         </div>
     );
