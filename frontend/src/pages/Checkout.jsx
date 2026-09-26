@@ -110,7 +110,7 @@ function Checkout() {
         console.log("Order Data:", orderData);
 
         const response = await fetch(
-            "http://localhost:5000/api/orders",
+            "/api/orders",
             {
                 method: "POST",
 
@@ -143,7 +143,7 @@ function Checkout() {
     const createRazorpayOrder = async () => {
 
         const response = await fetch(
-            "http://localhost:5000/api/payment/create-order",
+            "/api/payment/create-order",
             {
                 method: "POST",
 
@@ -182,7 +182,7 @@ function Checkout() {
     ) => {
 
         const response = await fetch(
-            "http://localhost:5000/api/payment/verify",
+            "/api/payment/verify",
             {
                 method: "POST",
 
