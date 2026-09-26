@@ -19,7 +19,7 @@ function Home() {
 
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
-
+    const [searchTerm, setSearchTerm] = useState("");
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -49,17 +49,20 @@ function Home() {
     // =========================================
     // FILTER FOODS BY CATEGORY
     // =========================================
+    const filteredFoods = foods.filter((food) => {
 
-    const filteredFoods =
-    selectedCategory === "all"
-        ? foods.filter(
-            (food) =>
-                food.categoryId?._id !== "6a8418d43e218c1d7dbd0749"
-        )
-        : foods.filter(
-            (food) =>
-                food.categoryId?._id === selectedCategory
-        );
+    const matchesCategory =
+        selectedCategory === "all" ||
+        food.categoryId === selectedCategory ||
+        food.categoryId?._id === selectedCategory;
+
+    const matchesSearch =
+        food.name
+            .toLowerCase()
+            .includes(searchTerm.toLowerCase());
+
+    return matchesCategory && matchesSearch;
+});
         
     // =========================================
     // LOADING
@@ -111,7 +114,16 @@ function Home() {
                     />
 
                 </section>
+                <div className="menu-search">
+                    <span className="search-icon">🔍</span>
 
+                    <input
+                        type="text"
+                        placeholder="Search for dosa, thali, vada..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                </div>
                 {/* =========================================
                     FOOD SECTION
                 ========================================= */}
