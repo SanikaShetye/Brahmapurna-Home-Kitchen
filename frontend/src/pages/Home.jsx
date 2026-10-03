@@ -20,6 +20,7 @@ function Home() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
     const [searchTerm, setSearchTerm] = useState("");
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -29,14 +30,51 @@ function Home() {
                         getFoods()
                     ]);
 
-                setCategories(categoryResponse.data);
-                setFoods(foodResponse.data);
+                console.log(
+                    "CATEGORY RESPONSE:",
+                    categoryResponse.data
+                );
 
-                console.log("CATEGORIES:", categoryResponse.data);
-                console.log("FIRST FOOD:", foodResponse.data[0]);
-                console.log("FIRST FOOD CATEGORY:", foodResponse.data[0]?.category);
+                console.log(
+                    "FOOD RESPONSE:",
+                    foodResponse.data
+                );
+
+                // Handle category response
+                const categoryData = Array.isArray(
+                    categoryResponse.data
+                )
+                    ? categoryResponse.data
+                    : categoryResponse.data.categories || [];
+
+                // Handle food response
+                const foodData = Array.isArray(
+                    foodResponse.data
+                )
+                    ? foodResponse.data
+                    : foodResponse.data.foods || [];
+
+                setCategories(categoryData);
+                setFoods(foodData);
+
+                console.log(
+                    "CATEGORIES:",
+                    categoryData
+                );
+
+                console.log(
+                    "FIRST FOOD:",
+                    foodData[0]
+                );
+
+                console.log(
+                    "FIRST FOOD CATEGORY:",
+                    foodData[0]?.categoryId
+                );
+
             } catch (error) {
-                console.error(error);
+                console.error("FETCH ERROR:", error);
+
                 setError("Unable to load menu data.");
             } finally {
                 setLoading(false);
@@ -47,23 +85,24 @@ function Home() {
     }, []);
 
     // =========================================
-    // FILTER FOODS BY CATEGORY
+    // FILTER FOODS BY CATEGORY + SEARCH
     // =========================================
+
     const filteredFoods = foods.filter((food) => {
 
-    const matchesCategory =
-        selectedCategory === "all" ||
-        food.categoryId === selectedCategory ||
-        food.categoryId?._id === selectedCategory;
+        const matchesCategory =
+            selectedCategory === "all" ||
+            food.categoryId === selectedCategory ||
+            food.categoryId?._id === selectedCategory;
 
-    const matchesSearch =
-        food.name
-            .toLowerCase()
-            .includes(searchTerm.toLowerCase());
+        const matchesSearch =
+            food.name
+                ?.toLowerCase()
+                .includes(searchTerm.toLowerCase());
 
-    return matchesCategory && matchesSearch;
-});
-        
+        return matchesCategory && matchesSearch;
+    });
+
     // =========================================
     // LOADING
     // =========================================
@@ -114,16 +153,28 @@ function Home() {
                     />
 
                 </section>
+
+                {/* =========================================
+                    SEARCH
+                ========================================= */}
+
                 <div className="menu-search">
-                    <span className="search-icon">🔍</span>
+
+                    <span className="search-icon">
+                        🔍
+                    </span>
 
                     <input
                         type="text"
                         placeholder="Search for dosa, thali, vada..."
                         value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
+                        onChange={(e) =>
+                            setSearchTerm(e.target.value)
+                        }
                     />
+
                 </div>
+
                 {/* =========================================
                     FOOD SECTION
                 ========================================= */}

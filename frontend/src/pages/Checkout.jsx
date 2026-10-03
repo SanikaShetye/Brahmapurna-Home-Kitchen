@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import Header from "../components/Header";
@@ -25,7 +25,37 @@ function Checkout() {
     const [orderPlaced, setOrderPlaced] = useState(false);
     const [orderId, setOrderId] = useState("");
     const [loading, setLoading] = useState(false);
+// =========================================
+// LOAD SAVED USER DETAILS
+// =========================================
 
+useEffect(() => {
+    const savedUser = localStorage.getItem("user");
+
+    if (!savedUser) {
+        return;
+    }
+
+    try {
+        const user = JSON.parse(savedUser);
+
+        setFormData((previousData) => ({
+            ...previousData,
+
+            name: user.name || "",
+            phone: user.phone || "",
+            address: user.address || "",
+            city: user.city || "",
+            pincode: user.pincode || ""
+        }));
+
+    } catch (error) {
+        console.error(
+            "Unable to load saved user details:",
+            error
+        );
+    }
+}, []);
 
     // =========================
     // HANDLE INPUT CHANGE

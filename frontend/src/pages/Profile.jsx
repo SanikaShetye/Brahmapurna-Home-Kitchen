@@ -1,8 +1,9 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../css/Auth.css";
 
-function Signup() {
+function Profile() {
+
     const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
@@ -11,52 +12,97 @@ function Signup() {
         phone: "",
         address: "",
         city: "",
-        pincode: "",
-        password: "",
-        confirmPassword: ""
+        pincode: ""
     });
 
     const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
     const [loading, setLoading] = useState(false);
 
-    // =========================================
-    // HANDLE INPUT
-    // =========================================
+    useEffect(() => {
 
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
+        const savedUser = localStorage.getItem("user");
 
-    // =========================================
-    // HANDLE SIGN UP
-    // =========================================
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        setError("");
-
-        // Password check
-        if (formData.password !== formData.confirmPassword) {
-            setError("Passwords do not match.");
-            return;
-        }
-
-        if (formData.password.length < 6) {
-            setError("Password must be at least 6 characters.");
+        if (!savedUser) {
+            navigate("/login");
             return;
         }
 
         try {
+
+            const user = JSON.parse(savedUser);
+
+            setFormData({
+                name: user.name || "",
+                email: user.email || "",
+                phone: user.phone || "",
+                address: user.address || "",
+                city: user.city || "",
+                pincode: user.pincode || ""
+            });
+
+        } catch (error) {
+
+            console.error(
+                "Unable to load profile:",
+                error
+            );
+
+            navigate("/login");
+        }
+
+    }, [navigate]);
+
+
+    const handleChange = (e) => {
+
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+
+    };
+
+
+    const handleSubmit = async (e) => {
+
+        e.preventDefault();
+
+        setError("");
+        setSuccess("");
+
+
+        const savedUser = localStorage.getItem("user");
+
+        if (!savedUser) {
+            navigate("/login");
+            return;
+        }
+
+
+        let user;
+
+        try {
+
+            user = JSON.parse(savedUser);
+
+        } catch (error) {
+
+            setError("Unable to load user information.");
+            return;
+
+        }
+
+
+        try {
+
             setLoading(true);
 
+
             const response = await fetch(
-                "/api/auth/signup",
+                `/api/auth/update/${user.id}`,
                 {
-                    method: "POST",
+                    method: "PUT",
 
                     headers: {
                         "Content-Type": "application/json"
@@ -68,35 +114,83 @@ function Signup() {
                         phone: formData.phone,
                         address: formData.address,
                         city: formData.city,
-                        pincode: formData.pincode,
-                        password: formData.password
+                        pincode: formData.pincode
                     })
                 }
             );
 
+
             const data = await response.json();
 
+
             if (!response.ok) {
+
                 throw new Error(
-                    data.message || "Signup failed."
+                    data.message ||
+                    "Unable to update profile."
                 );
+
             }
 
-            // Go to login after successful signup
-            navigate("/login");
+
+            /*
+             * Save updated user details
+             * in localStorage
+             */
+
+            localStorage.setItem(
+                "user",
+                JSON.stringify(data.user)
+            );
+
+
+            setFormData({
+                name: data.user.name || "",
+                email: data.user.email || "",
+                phone: data.user.phone || "",
+                address: data.user.address || "",
+                city: data.user.city || "",
+                pincode: data.user.pincode || ""
+            });
+
+
+            setSuccess(
+                "Profile updated successfully!"
+            );
+
+
+            /*
+             * Return to home after short delay
+             */
+
+            setTimeout(() => {
+                navigate("/");
+            }, 1200);
+
 
         } catch (error) {
-            console.error(error);
+
+            console.error(
+                "Update Profile Error:",
+                error
+            );
 
             setError(
-                error.message || "Unable to create account."
+                error.message ||
+                "Unable to update profile."
             );
+
         } finally {
+
             setLoading(false);
+
         }
+
     };
 
+
     return (
+
         <div className="auth-page">
 
             <div className="auth-card">
@@ -105,13 +199,16 @@ function Signup() {
                     👤
                 </div>
 
+
                 <h1>
-                    Create Account
+                    Update Profile
                 </h1>
 
+
                 <p className="auth-subtitle">
-                    Join Brahmapurna Home Kitchen
+                    Update your Brahmapurna Home Kitchen details
                 </p>
+
 
                 {error && (
                     <div className="auth-error">
@@ -119,11 +216,23 @@ function Signup() {
                     </div>
                 )}
 
+
+                {success && (
+                    <div
+                        className="auth-success"
+                    >
+                        {success}
+                    </div>
+                )}
+
+
                 <form onSubmit={handleSubmit}>
+
 
                     {/* NAME */}
 
                     <div className="form-group">
+
                         <label>
                             Full Name
                         </label>
@@ -136,12 +245,14 @@ function Signup() {
                             onChange={handleChange}
                             required
                         />
+
                     </div>
 
 
                     {/* EMAIL */}
 
                     <div className="form-group">
+
                         <label>
                             Email
                         </label>
@@ -154,12 +265,14 @@ function Signup() {
                             onChange={handleChange}
                             required
                         />
+
                     </div>
 
 
                     {/* PHONE */}
 
                     <div className="form-group">
+
                         <label>
                             Mobile Number
                         </label>
@@ -174,12 +287,14 @@ function Signup() {
                             maxLength="10"
                             required
                         />
+
                     </div>
 
 
                     {/* ADDRESS */}
 
                     <div className="form-group">
+
                         <label>
                             Delivery Address
                         </label>
@@ -192,12 +307,14 @@ function Signup() {
                             rows="4"
                             required
                         />
+
                     </div>
 
 
                     {/* CITY */}
 
                     <div className="form-group">
+
                         <label>
                             City
                         </label>
@@ -210,12 +327,14 @@ function Signup() {
                             onChange={handleChange}
                             required
                         />
+
                     </div>
 
 
                     {/* PINCODE */}
 
                     <div className="form-group">
+
                         <label>
                             Pincode
                         </label>
@@ -230,74 +349,43 @@ function Signup() {
                             maxLength="6"
                             required
                         />
+
                     </div>
 
 
-                    {/* PASSWORD */}
-
-                    <div className="form-group">
-                        <label>
-                            Password
-                        </label>
-
-                        <input
-                            type="password"
-                            name="password"
-                            placeholder="Create password"
-                            value={formData.password}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-
-
-                    {/* CONFIRM PASSWORD */}
-
-                    <div className="form-group">
-                        <label>
-                            Confirm Password
-                        </label>
-
-                        <input
-                            type="password"
-                            name="confirmPassword"
-                            placeholder="Confirm password"
-                            value={formData.confirmPassword}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
-
-
-                    {/* SIGN UP BUTTON */}
+                    {/* UPDATE BUTTON */}
 
                     <button
                         type="submit"
                         className="auth-button"
                         disabled={loading}
                     >
+
                         {loading
-                            ? "Creating Account..."
-                            : "Create Account"}
+                            ? "Updating Profile..."
+                            : "Update Profile"}
+
                     </button>
 
+
+                    {/* CANCEL */}
+
+                    <button
+                        type="button"
+                        className="profile-cancel-button"
+                        onClick={() => navigate("/")}
+                    >
+                        Cancel
+                    </button>
+
+
                 </form>
-
-
-                <div className="auth-switch">
-
-                    Already have an account?
-
-                    <Link to="/login">
-                        Login
-                    </Link>
-
-                </div>
 
             </div>
 
         </div>
+
     );
 }
 
-export default Signup;
+export default Profile;

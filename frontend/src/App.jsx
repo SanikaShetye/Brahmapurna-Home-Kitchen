@@ -6,7 +6,8 @@ import MenuHeader from "./components/MenuHeader";
 import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
-import Signup from "./pages/SignUp";
+import Signup from "./pages/Signup";
+import Profile from "./pages/Profile";
 
 import { CartProvider } from "./context/CartContext";
 import CartToast from "./components/CartToast";
@@ -61,6 +62,11 @@ function App() {
                     <Route
                         path="/checkout"
                         element={<Checkout />}
+                    />
+
+                    <Route
+                        path="/profile"
+                        element={<Profile />}
                     />
 
                 </Routes>

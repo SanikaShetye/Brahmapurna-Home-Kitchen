@@ -19,6 +19,11 @@ function Header() {
         navigate("/");
     };
 
+    const handleEditProfile = () => {
+        setShowUserMenu(false);
+        navigate("/profile");
+    };
+
     return (
         <header className="header">
 
@@ -149,9 +154,66 @@ function Header() {
 
                             <div className="user-dropdown">
 
+                                {/* USER NAME */}
+
                                 <div className="dropdown-user-name">
                                     👤 {user.name}
                                 </div>
+
+
+                                {/* EMAIL */}
+
+                                <div className="dropdown-user-detail">
+                                    <span>Email</span>
+                                    <strong>{user.email}</strong>
+                                </div>
+
+
+                                {/* PHONE */}
+
+                                <div className="dropdown-user-detail">
+                                    <span>Mobile</span>
+                                    <strong>{user.phone}</strong>
+                                </div>
+
+
+                                {/* ADDRESS */}
+
+                                <div className="dropdown-user-detail">
+                                    <span>Address</span>
+                                    <strong>{user.address}</strong>
+                                </div>
+
+
+                                {/* CITY + PINCODE */}
+
+                                <div className="dropdown-user-row">
+
+                                    <div className="dropdown-user-detail">
+                                        <span>City</span>
+                                        <strong>{user.city}</strong>
+                                    </div>
+
+                                    <div className="dropdown-user-detail">
+                                        <span>Pincode</span>
+                                        <strong>{user.pincode}</strong>
+                                    </div>
+
+                                </div>
+
+
+                                {/* EDIT PROFILE */}
+
+                                <button
+                                    type="button"
+                                    className="edit-profile-button"
+                                    onClick={handleEditProfile}
+                                >
+                                    ✏️ Edit Profile
+                                </button>
+
+
+                                {/* LOGOUT */}
 
                                 <button
                                     type="button"
