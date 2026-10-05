@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-    baseURL: "/api"
+    baseURL: "https://brahmapurna-home-kitchen-tqed.vercel.app/api"
 });
 
 // Get all categories
