@@ -39,7 +39,7 @@ function About() {
                     <div className="about-circle"></div>
 
                     <img
-                        src="/images/AboutUs.jpg"
+                        src="/images/ProfileLogo.png"
                         alt="Traditional homemade food"
                     />
 
@@ -54,7 +54,7 @@ function About() {
                 <div className="story-image">
 
                     <img
-                        src="/images/our-story.png"
+                        src="/images/AboutUs1.jpg"
                         alt="Homemade food"
                     />
 

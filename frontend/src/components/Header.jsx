@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 function Header() {
-
     const navigate = useNavigate();
 
     const [user, setUser] = useState(
@@ -11,6 +10,7 @@ function Header() {
     );
 
     const [showUserMenu, setShowUserMenu] = useState(false);
+    const [showMobileMenu, setShowMobileMenu] = useState(false);
 
     const handleLogout = () => {
         localStorage.removeItem("user");
@@ -24,90 +24,56 @@ function Header() {
         navigate("/profile");
     };
 
+    const closeMobileMenu = () => {
+        setShowMobileMenu(false);
+    };
+
     return (
         <header className="header">
 
             {/* =========================
                 BRAND
             ========================= */}
-
-            <Link to="/" className="brand">
-
+            <Link
+                to="/"
+                className="brand"
+                onClick={closeMobileMenu}
+            >
                 <div className="brand-logo">
-                    <svg
-                        viewBox="0 0 64 64"
+                    <img
+                        src="/images/ProfileLogo.png"
+                        alt="Brahmapurna Home Kitchen"
                         className="brand-logo-icon"
-                        aria-hidden="true"
-                    >
-                        <circle
-                            cx="32"
-                            cy="32"
-                            r="30"
-                            fill="#fff0dc"
-                        />
-
-                        <circle
-                            cx="24"
-                            cy="28"
-                            r="5"
-                            fill="#f4a261"
-                        />
-
-                        <circle
-                            cx="33"
-                            cy="26"
-                            r="5"
-                            fill="#e76f51"
-                        />
-
-                        <circle
-                            cx="41"
-                            cy="29"
-                            r="4"
-                            fill="#f6bd60"
-                        />
-
-                        <path
-                            d="M14 29c0-3 4-5 18-5s18 2 18 5-4 5-18 5-18-2-18-5Z"
-                            fill="#a05200"
-                        />
-
-                        <path
-                            d="M16 31h32c-1 10-7 17-16 17s-15-7-16-17Z"
-                            fill="#8b4a00"
-                        />
-
-                        <path
-                            d="M22 37c3 5 7 7 10 7"
-                            fill="none"
-                            stroke="#c87520"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                        />
-                    </svg>
+                    />
                 </div>
 
                 <div className="brand-text">
                     <h2>Brahmapurna</h2>
                     <span>Home Kitchen</span>
                 </div>
-
             </Link>
 
 
             {/* =========================
-                NAVIGATION
+                DESKTOP / MOBILE NAV
             ========================= */}
+            <nav className={`navbar ${showMobileMenu ? "mobile-menu-open" : ""}`}>
 
-            <nav className="navbar">
+                <Link to="/" onClick={closeMobileMenu}>
+                    Home
+                </Link>
 
-                <Link to="/">Home</Link>
+                <Link to="/menu" onClick={closeMobileMenu}>
+                    Menu
+                </Link>
 
-                <Link to="/menu">Menu</Link>
+                <Link to="/about" onClick={closeMobileMenu}>
+                    About Us
+                </Link>
 
-                <Link to="/about">About Us</Link>
-
-                <Link to="/contact">Contact</Link>
+                <Link to="/contact" onClick={closeMobileMenu}>
+                    Contact
+                </Link>
 
             </nav>
 
@@ -115,26 +81,19 @@ function Header() {
             {/* =========================
                 RIGHT SIDE
             ========================= */}
-
             <div className="header-right">
 
                 {/* CART */}
-
                 <Link to="/cart" className="cart-button">
                     <span className="cart-icon">🛒</span>
                     <span>Cart</span>
                 </Link>
 
 
-                {/* =========================
-                    LOGGED IN USER
-                ========================= */}
-
+                {/* USER */}
                 {user ? (
 
                     <div className="user-menu-container">
-
-                        {/* USER ICON */}
 
                         <button
                             type="button"
@@ -147,45 +106,27 @@ function Header() {
                             👤
                         </button>
 
-
-                        {/* USER DROPDOWN */}
-
                         {showUserMenu && (
-
                             <div className="user-dropdown">
-
-                                {/* USER NAME */}
 
                                 <div className="dropdown-user-name">
                                     👤 {user.name}
                                 </div>
-
-
-                                {/* EMAIL */}
 
                                 <div className="dropdown-user-detail">
                                     <span>Email</span>
                                     <strong>{user.email}</strong>
                                 </div>
 
-
-                                {/* PHONE */}
-
                                 <div className="dropdown-user-detail">
                                     <span>Mobile</span>
                                     <strong>{user.phone}</strong>
                                 </div>
 
-
-                                {/* ADDRESS */}
-
                                 <div className="dropdown-user-detail">
                                     <span>Address</span>
                                     <strong>{user.address}</strong>
                                 </div>
-
-
-                                {/* CITY + PINCODE */}
 
                                 <div className="dropdown-user-row">
 
@@ -201,9 +142,6 @@ function Header() {
 
                                 </div>
 
-
-                                {/* EDIT PROFILE */}
-
                                 <button
                                     type="button"
                                     className="edit-profile-button"
@@ -211,9 +149,6 @@ function Header() {
                                 >
                                     ✏️ Edit Profile
                                 </button>
-
-
-                                {/* LOGOUT */}
 
                                 <button
                                     type="button"
@@ -224,25 +159,33 @@ function Header() {
                                 </button>
 
                             </div>
-
                         )}
 
                     </div>
 
                 ) : (
 
-                    /* =========================
-                       LOGGED OUT
-                    ========================= */
-
-                    <Link
-                        to="/login"
-                        className="login-button"
-                    >
+                    <Link to="/login" className="login-button">
                         Login
                     </Link>
 
                 )}
+
+
+                {/* =========================
+                    MOBILE TOGGLE
+                ========================= */}
+                <button
+                    type="button"
+                    className="mobile-menu-toggle"
+                    onClick={() =>
+                        setShowMobileMenu(!showMobileMenu)
+                    }
+                    aria-label="Toggle navigation menu"
+                    aria-expanded={showMobileMenu}
+                >
+                    {showMobileMenu ? "✕" : "☰"}
+                </button>
 
             </div>
 
